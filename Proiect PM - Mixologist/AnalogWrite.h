@@ -9,8 +9,9 @@
 #ifndef INCFILE1_H_
 #define INCFILE1_H_
 
+void initAnalogWrite();
 
-
+void analogWrite(int pin, int duty);
 
 
 #endif /* INCFILE1_H_ */

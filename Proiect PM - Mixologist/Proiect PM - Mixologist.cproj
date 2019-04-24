@@ -120,13 +120,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CFile1.c">
+    <Compile Include="AnalogWrite.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="IncFile1.h">
+    <Compile Include="AnalogWrite.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="utils.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
