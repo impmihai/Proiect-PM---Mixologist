@@ -36,14 +36,16 @@
 #define PC6 22;
 #define PC7 23;
 
-#define PD0 24;
-#define PD1 25;
-#define PD2 16;
-#define PD3 17;
-#define PD4 18;
-#define PD5 29;
-#define PD6 30;
-#define PD7 31;
+#define PD0 32;
+#define PD1 33;
+#define PD2 34;
+#define PD3 35;
+#define PD4 36;
+#define PD5 37;
+#define PD6 38;
+#define PD7 39;
+
+#define GET_PORT(A) (((A) & (1 << 6)) ? PORTD : (((A) & (1 << 5)) ? PORTC : (((A) & (1 << 4)) ? PORTB : (((A) & (1 << 4)) ? PORTA : NULL))))
 
 
 #endif /* UTILS_H_ */

@@ -11,7 +11,7 @@
 
 void initAnalogWrite();
 
-void analogWrite(int pin, int duty);
+void analogWrite(int duty);
 
 
 #endif /* INCFILE1_H_ */

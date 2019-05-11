@@ -4,32 +4,45 @@
  * Created: 4/23/2019 9:19:37 PM
  *  Author: mihai
  */ 
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
 #include "AnalogWrite.h"
 
+volatile uint8_t pinR_pwm;
+volatile uint8_t pinG_pwm;
+volatile uint8_t pinB_pwm;
+volatile uint8_t pinMotor_pwm;
+volatile uint8_t count;
 
+//ISR(TIMER2_OVF_vect) {
+//PORTD &= 0x00;
+//}
+//
 ISR(TIMER2_COMPA_vect) {
 	count += 1;
 	if (count == 0) {
 		//PORTB &=
-		PORTB &= ~0b11110000;
+		PORTD &= ~0b11110000;
 	}
 	
 	if (count == pinR_pwm) {
-		PORTB |= 0b10000000;
+		PORTD |= 0b10000000;
 	}
 	
 	if (count == pinG_pwm) {
-		PORTB |= 0b01000000;
+		PORTD |= 0b01000000;
 	}
 	
 	if (count == pinB_pwm) {
-		PORTB |= 0b00100000;
+		PORTD |= 0b00100000;
 	}
 	
 	if (count == pinB_pwm) {
-		PORTB |= 0b00010000;
+		PORTD |= 0b00010000;
 	}
 }
+
 
 
 void initAnalogWrite() {
@@ -40,6 +53,8 @@ void initAnalogWrite() {
 	sei();
 }
 
-void analogWrite(int pin, int duty) {
-	
+void analogWrite(int duty) {
+	pinR_pwm = duty;
+	pinG_pwm = duty;
+	pinB_pwm = duty;
 }

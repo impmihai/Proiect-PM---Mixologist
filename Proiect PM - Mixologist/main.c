@@ -9,109 +9,82 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include "Stepper.h"
+#include "AnalogWrite.h"
 
-volatile uint8_t pinR_pwm;
-volatile uint8_t pinG_pwm;
-volatile uint8_t pinB_pwm;
-volatile uint8_t pinMotor_pwm;
-volatile uint8_t count;
-
-ISR(TIMER2_OVF_vect) {
-	PORTD &= 0x00;
+void setup_timer1() {
+	TCCR1A |= (1 << WGM11);
+	TCCR1A |= (1 << COM1B1);
+	TCCR1B |= (1 << WGM13) | (1 << WGM12);
+	TCCR1B |= (1 << CS10) | (1 << CS11);
+	ICR1 = 4999; 
 }
 
-ISR(TIMER2_COMPA_vect) {
-	count += 1;
-	if (count == 0) {
-		//PORTB &=
-		PORTB &= ~0b11110000; 
-	}
-	
-	if (count == pinR_pwm) {
-		PORTB |= 0b10000000;
-	} 
-	
-	if (count == pinG_pwm) {
-		PORTB |= 0b01000000;
-	}
-	
-	if (count == pinB_pwm) {
-		PORTB |= 0b00100000;
-	}
-	
-	if (count == pinB_pwm) {
-		PORTB |= 0b00010000;
-	}
-}
 
-void setup_timer2() {
-	TCCR2B |= (1<<CS20) ;   //clock select is divided by 64.
-	TCCR2A |= (1<<WGM21);              //sets mode to CTC
-	OCR2A = 0x7C;                      //sets TOP to 124 so the timer will overflow every 0.5 ms.
-	TIMSK2 |= (1<<OCIE2A);              //Output Compare Match A Interrupt Enable
-	sei();
-}
+#define delay 50
 
-int state = 0;
 
 int main(void)
 {
-	count = 0;
+	//count = 0;
+	//setup_timer1();
 	//setup_timer2();
+	
+	setup_stepper(100);
 	DDRB = 0xFF;
 	DDRD = 0xFF;
+	PORTB = 0x00;
 	
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	
-	TCCR1A |= (1 << WGM11) | (1 << COM1A1);
-	TCCR1B |= (1 << WGM12) | (1 << WGM13) | (1 << CS11);
-	ICR1 = 39999;
-	int offset = 800;
+	//initAnalogWrite();
+	stepper_move(100);
+	int i, j, k;
     while (1) 
     {
-		//for (i = 0; i < 255; i++) {
-			//pinR_pwm = i;
-			//pinG_pwm = 255 - i;
-			//pinB_pwm = 0;
-			//_delay_ms(1);
+		//for (i = 0; i < 800; i++) {
+			//OCR1B = i;
+			//_delay_ms(10);
 		//}
+		//OCR1B = 130;	/* set servo shaft at -90° position */
+		//_delay_ms(500);
+		//OCR1B = 350;	/* set servo shaft at 0° position */
+		//_delay_ms(2500);
+		//OCR1B = 600;	/* set servo at +90° position */
+		//_delay_ms(2500);
+		
+//
 		//for (i = 0; i < 255; i++) {
-			//pinB_pwm = i;
-			//pinR_pwm = 255 - i;
-			//pinG_pwm = 0;
-			//_delay_ms(1);
-			//
-		//}
-		//for (i = 0; i < 255; i++) {
-			//pinG_pwm = i;
-			//pinB_pwm = 255 - i;
-			//pinR_pwm = 0;
-			//_delay_ms(1);
+			//analogWrite(i);
+			//_delay_ms(2);
 			//
 		//}
 		
-		OCR1A = 3999 + offset;
-
-		_delay_ms(5000);
-
-		OCR1A = 1999 - offset;
-
-		_delay_ms(5000);
-
-		 
+		/* main loop here */
+		//PORTB |= 0b00000001;
+		//_delay_ms(delay);
+		//PORTB &= 0b00000000;
 		//
-		//for (i = 0; i < 255; i++) {
-			//for (j = 0; j < 255; j++) {
-				//for (k = 0; k < 255; k++) {
-					//pinR_pwm = i;
-					//pinG_pwm = j;
-					//pinB_pwm = k;
-					//_delay_us(1);
-				//}
-			//}
-		//}
+		//PORTB |= 0b00000100;
+		//_delay_ms(delay);
+		//PORTB &= 0b00000000;
+		//
+		//
+		//PORTB |= 0b00000010;
+		//_delay_ms(delay);
+		//PORTB &= 0b00000000;
+		//
+		//PORTB |= 0b00001000;
+		//_delay_ms(delay);
+		//PORTB &= 0b00000010;
+		
+		//_delay_ms(delay);
+		
+		//OCR1A = 3999 + offset;
+//
+		//_delay_ms(5000);
+//
+		//OCR1A = 1999 - offset;
+//
+		//_delay_ms(5000);
     }
 }
 
