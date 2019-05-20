@@ -4,7 +4,7 @@
  * Created: 4/23/2019 9:02:00 PM
  * Author : mihai
  */ 
-#define F_CPU 16000000UL
+#define F_CPU 8000000UL
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -20,71 +20,74 @@ void setup_timer1() {
 	ICR1 = 4999; 
 }
 
-
-#define delay 50
-
+enum STATES {
+	STATE_WAITING,
+	STATE_HOMING,
+	STATE_MOVING_GLASS,
+	STATE_POURING,
+};	
 
 int main(void)
 {
-	//count = 0;
-	//setup_timer1();
-	//setup_timer2();
-	
-	setup_stepper(100);
-	DDRB = 0xFF;
-	DDRD = 0xFF;
-	PORTB = 0x00;
+	DDRD = 0b10000000;
+	int STATE = 0;
+	int known_home_glass = 0;
+	setup_stepper_glass(150);
+	set_position_glass(15000);
+	stepper_move_glass(15000);
 	
 	//initAnalogWrite();
-	stepper_move(100);
 	int i, j, k;
+	unsigned int rgbColour[3];
+	  // Start off with red.
+	  rgbColour[0] = 255;
+	  rgbColour[1] = 0;
+	  rgbColour[2] = 0;
+	
+	sei();
+	int pas = 0;
     while (1) 
     {
-		//for (i = 0; i < 800; i++) {
-			//OCR1B = i;
-			//_delay_ms(10);
-		//}
-		//OCR1B = 130;	/* set servo shaft at -90° position */
-		//_delay_ms(500);
-		//OCR1B = 350;	/* set servo shaft at 0° position */
-		//_delay_ms(2500);
-		//OCR1B = 600;	/* set servo at +90° position */
-		//_delay_ms(2500);
+		PORTD &= ~0b10000000;
+		if (STATE == STATE_WAITING) {
+			PORTD |= 0b10000000;
 		
-//
-		//for (i = 0; i < 255; i++) {
-			//analogWrite(i);
-			//_delay_ms(2);
+			if (!known_home_glass) {
+				STATE = STATE_HOMING;
+				stepper_move_glass(0);
+			} else {
+				if (get_position_glass() < 300)
+					stepper_move_glass(300);
+			}
+		} else if (STATE == STATE_HOMING) {
+			if (!is_moving_glass()) {
+				known_home_glass = 1;
+				STATE = STATE_WAITING;
+			}
+		} else if (STATE == STATE_MOVING_GLASS) {
+			if (!is_moving_glass()) {
+				STATE = STATE_POURING;
+			}
+		} else if (STATE == STATE_POURING) {
+			// EMPTY
+			STATE = STATE_WAITING;
+		}
+		
+		//if (pas == 0) {
+			//if (!is_moving_1()) {
+				//stepper_move_1(-100);
+				//pas = 1;
+			//}
+			//
+		//} else if (pas == 1) {
+			//if (!is_moving_1()) {
+				//stepper_move_1(0);
+				//pas = 0;
+			//}
 			//
 		//}
 		
-		/* main loop here */
-		//PORTB |= 0b00000001;
-		//_delay_ms(delay);
-		//PORTB &= 0b00000000;
-		//
-		//PORTB |= 0b00000100;
-		//_delay_ms(delay);
-		//PORTB &= 0b00000000;
-		//
-		//
-		//PORTB |= 0b00000010;
-		//_delay_ms(delay);
-		//PORTB &= 0b00000000;
-		//
-		//PORTB |= 0b00001000;
-		//_delay_ms(delay);
-		//PORTB &= 0b00000010;
 		
-		//_delay_ms(delay);
-		
-		//OCR1A = 3999 + offset;
-//
-		//_delay_ms(5000);
-//
-		//OCR1A = 1999 - offset;
-//
-		//_delay_ms(5000);
     }
 }
 

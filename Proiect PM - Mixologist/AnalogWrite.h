@@ -6,12 +6,12 @@
  */ 
 
 
-#ifndef INCFILE1_H_
-#define INCFILE1_H_
+#ifndef ANALOGWRITE_H_
+#define ANALOGWRITE_H_
 
 void initAnalogWrite();
 
-void analogWrite(int duty);
+void analogWrite(int r, int g, int b);
 
 
 #endif /* INCFILE1_H_ */

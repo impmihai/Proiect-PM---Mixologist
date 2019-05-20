@@ -6,29 +6,25 @@
  */ 
 
 
+// The code for the motor that moves the glass around.
 #ifndef STEPPER_H_
 #define STEPPER_H_
 
-#define STEPPER_PORT PORTB
-#define STEPPER_FIRST_PIN 0
+#define STEPPER_GLASS_DDR DDRD
+#define STEPPER_GLASS_PORT PORTD
+#define STEPPER_GLASS_STEP_PIN 4
+#define STEPPER_GLASS_DIRECTION_PIN 3
+#define STEPPER_GLASS_ENABLED_PIN 2
 
-
-#define ZERO_STEPPER (STEPPER_PORT &= ~((0b00001111) << STEPPER_FIRST_PIN))
-#define SET_STEP1 (STEPPER_PORT |= (0b00000001) << STEPPER_FIRST_PIN)
-#define SET_STEP2 (STEPPER_PORT |= (0b00000100) << STEPPER_FIRST_PIN)
-#define SET_STEP3 (STEPPER_PORT |= (0b00000010) << STEPPER_FIRST_PIN)
-#define SET_STEP4 (STEPPER_PORT |= (0b00001000) << STEPPER_FIRST_PIN)
-
-#define DELAY_BETWEEN_STEPS (1000 / steps_per_second)
-#define STEPS_FREQUENCY (1000 / DELAY_BETWEEN_STEPS)
-#define COUNT_TO (15625 / STEPS_FREQUENCY)
+#define COUNT_TO ((15625 / steps_per_second_glass) - 1);
 
 #define STEPS_PER_MM 3
 
-void setup_stepper(int stepsPerSecond);
-void set_speed(uint8_t stepsPerSecond);
-void stepper_move(int milimeters);
-int get_position();
-uint8_t is_moving();
+void setup_stepper_glass(int stepsPerSecond);
+void set_speed_glass(uint8_t stepsPerSecond);
+void stepper_move_glass(int step);
+int get_position_glass();
+void set_position_glass(int step);
+uint8_t is_moving_glass();
 
 #endif /* STEPPER_H_ */

@@ -53,8 +53,8 @@ void initAnalogWrite() {
 	sei();
 }
 
-void analogWrite(int duty) {
-	pinR_pwm = duty;
-	pinG_pwm = duty;
-	pinB_pwm = duty;
+void analogWrite(int r, int g, int b) {
+	pinR_pwm = 255 - r;
+	pinG_pwm = 255 - g;
+	pinB_pwm = 255 -  b;
 }
