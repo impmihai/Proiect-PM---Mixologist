@@ -181,7 +181,7 @@ void init_drinks() {
 	
 	
 	// MONA + TONIC
-	drinks[7][0].amount = DRINK_GIN;
+	drinks[7][0].amount = DRINK_MONA;
 	drinks[7][0].type = COMMAND_MOVE;
 	
 	drinks[7][1].amount = 11000;
@@ -219,6 +219,25 @@ void init_drinks() {
 	drinks[8][6].amount = FINISHED_MOVE;
 	drinks[8][6].type = COMMAND_MOVE;
 	
+	// ROM + MONA + TONIC
+	drinks[9][0].amount = DRINK_ROM;
+	drinks[9][0].type = COMMAND_MOVE;
+	
+	drinks[9][1].amount = 11000;
+	drinks[9][1].type = COMMAND_DISPENSE;
+	
+	drinks[9][2].amount = DRINK_MONA;
+	drinks[9][2].type = COMMAND_MOVE;
+	
+	drinks[9][3].amount = 11000;
+	drinks[9][3].type = COMMAND_DISPENSE;
+	
+	drinks[9][4].amount = DRINK_SCHWEEPS;
+	drinks[9][4].type = COMMAND_MOVE;
+	
+	drinks[9][5].amount = FINISHED_MOVE;
+	drinks[9][5].type = COMMAND_MOVE;
+	
 }
 
 int main(void)
@@ -254,19 +273,23 @@ int main(void)
     while (1) 
     {
 			PORTD &= ~0b10000000;
-					if (p.r > 0 && p.b == 0) {
-					p.r--;
-					p.g++;
+					if (STATE != STATE_POURING) {
+						if (p.r > 0 && p.b == 0) {
+							p.r--;
+							p.g++;
+						}
+						if (p.g > 0 && p.r == 0) {
+							p.g--;
+							p.b++;
+						}
+						if (p.b > 0 && p.g == 0) {
+							p.r++;
+							p.b--;
+						}
+						_delay_us(200);
+					
 					}
-					if (p.g > 0 && p.r == 0) {
-					p.g--;
-					p.b++;
-					}
-					if (p.b > 0 && p.g == 0) {
-					p.r++;
-					p.b--;
-					}
-					_delay_us(200);
+					
 					//rgbColour[0] = 255;
 					//rgbColour[1] = 255;
 					//rgbColour[2] = 255;
@@ -293,10 +316,13 @@ int main(void)
 							stepper_move_glass(drinks[current_receipe][current_command].amount);
 						} else if (drinks[current_receipe][current_command].type == COMMAND_DISPENSE) {
 							STATE = STATE_POURING;
+							p.r = 255;
+							p.g = 0;
+							p.b = 0;
+							analogWrite(p.r, p.g, p.b);					
 							stepper_move_disp(drinks[current_receipe][current_command].amount);
 						} else if (drinks[current_receipe][current_command].type == COMMAND_WAIT) {
 							STATE = STATE_PAUSE;
-							_delay_ms(2000);
 						}
 						current_command ++;
 					} else {
@@ -324,6 +350,7 @@ int main(void)
 				}
 			}
 		} else if( STATE == STATE_PAUSE) {
+			_delay_ms(2000);
 			STATE = STATE_WAITING;
 		}
     }

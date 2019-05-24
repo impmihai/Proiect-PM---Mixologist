@@ -82,7 +82,6 @@ ISR (PCINT1_vect)
 ISR (PCINT2_vect) {
 	if ((PINC & (1 << PC7)) == 0) { // HOMING DISPENSER
 		current_position_disp = 0;
-		PORTD ^= (1 << PD7);
 	}
 }
 void setup_steppers() {
