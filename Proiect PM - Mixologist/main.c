@@ -60,7 +60,7 @@ int positions[6] = {0, 1100, 2400, 3600, 4850, 6000 };
 command drinks[11][16];
 
 int current_receipe;
-int number_of_dispenses[11] = {0, 5, 7, 5, 7, 5, 7, 5, 7 };
+int number_of_dispenses[11] = {0, 5, 7, 5, 7, 5, 7, 5, 7, 6 };
 void init_drinks() {
 	// JAGGER AND COLA
 	drinks[1][0].amount = DRINK_JAGGER;

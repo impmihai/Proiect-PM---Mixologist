@@ -227,7 +227,7 @@ void analogWrite(int r, int g, int b) {
 command drinks[11][16];
 
 int current_receipe;
-int number_of_dispenses[11] = {0, 5, 7, 5, 7, 5, 7, 5, 7 };
+int number_of_dispenses[11] = {0, 5, 7, 5, 7, 5, 7, 5, 7, 6 };
 void init_drinks() {
  15a:	4f 92       	push	r4
  15c:	5f 92       	push	r5
