@@ -3,31 +3,31 @@ Proiect PM - Mixologist.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000002  00800100  00000352  000003e6  2**0
+  0 .data         00000026  00800100  00000b5e  00000bf2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000352  00000000  00000000  00000094  2**1
+  1 .text         00000b5e  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000009  00800102  00800102  000003e8  2**0
+  2 .bss          00000647  00800126  00800126  00000c18  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  000003e8  2**0
+  3 .comment      00000030  00000000  00000000  00000c18  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000418  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000c48  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000b0  00000000  00000000  00000458  2**0
+  5 .debug_aranges 00000128  00000000  00000000  00000c88  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00000be2  00000000  00000000  00000508  2**0
+  6 .debug_info   000011ca  00000000  00000000  00000db0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000008e4  00000000  00000000  000010ea  2**0
+  7 .debug_abbrev 00000ab1  00000000  00000000  00001f7a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000058e  00000000  00000000  000019ce  2**0
+  8 .debug_line   00000c14  00000000  00000000  00002a2b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000150  00000000  00000000  00001f5c  2**2
+  9 .debug_frame  000002a0  00000000  00000000  00003640  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000578  00000000  00000000  000020ac  2**0
+ 10 .debug_str    00000769  00000000  00000000  000038e0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000229  00000000  00000000  00002624  2**0
+ 11 .debug_loc    000006da  00000000  00000000  00004049  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000080  00000000  00000000  0000284d  2**0
+ 12 .debug_ranges 000000e8  00000000  00000000  00004723  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -38,9 +38,9 @@ Disassembly of section .text:
    8:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
    c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
   10:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
-  14:	0c 94 14 01 	jmp	0x228	; 0x228 <__vector_5>
-  18:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
-  1c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  14:	0c 94 1f 05 	jmp	0xa3e	; 0xa3e <__vector_5>
+  18:	0c 94 2f 05 	jmp	0xa5e	; 0xa5e <__vector_6>
+  1c:	0c 94 0e 04 	jmp	0x81c	; 0x81c <__vector_7>
   20:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
   24:	0c 94 5d 00 	jmp	0xba	; 0xba <__vector_9>
   28:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
@@ -49,7 +49,7 @@ Disassembly of section .text:
   34:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
   38:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
   3c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
-  40:	0c 94 cf 00 	jmp	0x19e	; 0x19e <__vector_16>
+  40:	0c 94 63 04 	jmp	0x8c6	; 0x8c6 <__vector_16>
   44:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
   48:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
   4c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
@@ -77,18 +77,18 @@ Disassembly of section .text:
   88:	11 e0       	ldi	r17, 0x01	; 1
   8a:	a0 e0       	ldi	r26, 0x00	; 0
   8c:	b1 e0       	ldi	r27, 0x01	; 1
-  8e:	e2 e5       	ldi	r30, 0x52	; 82
-  90:	f3 e0       	ldi	r31, 0x03	; 3
+  8e:	ee e5       	ldi	r30, 0x5E	; 94
+  90:	fb e0       	ldi	r31, 0x0B	; 11
   92:	02 c0       	rjmp	.+4      	; 0x98 <__do_copy_data+0x10>
   94:	05 90       	lpm	r0, Z+
   96:	0d 92       	st	X+, r0
-  98:	a2 30       	cpi	r26, 0x02	; 2
+  98:	a6 32       	cpi	r26, 0x26	; 38
   9a:	b1 07       	cpc	r27, r17
   9c:	d9 f7       	brne	.-10     	; 0x94 <__do_copy_data+0xc>
 
 0000009e <__do_clear_bss>:
-  9e:	21 e0       	ldi	r18, 0x01	; 1
-  a0:	a2 e0       	ldi	r26, 0x02	; 2
+  9e:	27 e0       	ldi	r18, 0x07	; 7
+  a0:	a6 e2       	ldi	r26, 0x26	; 38
   a2:	b1 e0       	ldi	r27, 0x01	; 1
   a4:	01 c0       	rjmp	.+2      	; 0xa8 <.do_clear_bss_start>
 
@@ -96,21 +96,21 @@ Disassembly of section .text:
   a6:	1d 92       	st	X+, r1
 
 000000a8 <.do_clear_bss_start>:
-  a8:	ab 30       	cpi	r26, 0x0B	; 11
+  a8:	ad 36       	cpi	r26, 0x6D	; 109
   aa:	b2 07       	cpc	r27, r18
   ac:	e1 f7       	brne	.-8      	; 0xa6 <.do_clear_bss_loop>
-  ae:	0e 94 93 00 	call	0x126	; 0x126 <main>
-  b2:	0c 94 a7 01 	jmp	0x34e	; 0x34e <_exit>
+  ae:	0e 94 d4 02 	call	0x5a8	; 0x5a8 <main>
+  b2:	0c 94 ad 05 	jmp	0xb5a	; 0xb5a <_exit>
 
 000000b6 <__bad_interrupt>:
   b6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 000000ba <__vector_9>:
+volatile uint8_t pinG_pwm;
+volatile uint8_t pinB_pwm;
+volatile uint8_t pinMotor_pwm;
+volatile uint8_t count;
 
-//ISR(TIMER2_OVF_vect) {
-//PORTD &= 0x00;
-//}
-//
 ISR(TIMER2_COMPA_vect) {
   ba:	1f 92       	push	r1
   bc:	0f 92       	push	r0
@@ -120,472 +120,1522 @@ ISR(TIMER2_COMPA_vect) {
   c4:	8f 93       	push	r24
   c6:	9f 93       	push	r25
 	count += 1;
-  c8:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <count>
+  c8:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <count>
   cc:	8f 5f       	subi	r24, 0xFF	; 255
-  ce:	80 93 09 01 	sts	0x0109, r24	; 0x800109 <count>
+  ce:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <count>
 	if (count == 0) {
-  d2:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <count>
+  d2:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <count>
   d6:	81 11       	cpse	r24, r1
   d8:	03 c0       	rjmp	.+6      	; 0xe0 <__vector_9+0x26>
 		//PORTB &=
-		PORTD &= ~0b11110000;
-  da:	8b b1       	in	r24, 0x0b	; 11
-  dc:	8f 70       	andi	r24, 0x0F	; 15
-  de:	8b b9       	out	0x0b, r24	; 11
+		//PORTD &= ~(1 << PD7);
+		PORTC &= ~((1 << PC0) | (1 << PC1) | (1 << PC2));
+  da:	88 b1       	in	r24, 0x08	; 8
+  dc:	88 7f       	andi	r24, 0xF8	; 248
+  de:	88 b9       	out	0x08, r24	; 8
 	}
 	
 	if (count == pinR_pwm) {
-  e0:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <count>
-  e4:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <pinR_pwm>
+  e0:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <count>
+  e4:	80 91 36 01 	lds	r24, 0x0136	; 0x800136 <pinR_pwm>
   e8:	98 13       	cpse	r25, r24
   ea:	01 c0       	rjmp	.+2      	; 0xee <__vector_9+0x34>
-		PORTD |= 0b10000000;
-  ec:	5f 9a       	sbi	0x0b, 7	; 11
+		//PORTD |= (1 << PD71);
+		PORTC |= (1 << PC0);
+  ec:	40 9a       	sbi	0x08, 0	; 8
 	}
 	
 	if (count == pinG_pwm) {
-  ee:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <count>
-  f2:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <pinG_pwm>
+  ee:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <count>
+  f2:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <pinG_pwm>
   f6:	98 13       	cpse	r25, r24
   f8:	01 c0       	rjmp	.+2      	; 0xfc <__vector_9+0x42>
-		PORTD |= 0b01000000;
-  fa:	5e 9a       	sbi	0x0b, 6	; 11
+		PORTC |= (1 << PC1);
+  fa:	41 9a       	sbi	0x08, 1	; 8
 	}
 	
 	if (count == pinB_pwm) {
-  fc:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <count>
- 100:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <pinB_pwm>
+  fc:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <count>
+ 100:	80 91 37 01 	lds	r24, 0x0137	; 0x800137 <pinB_pwm>
  104:	98 13       	cpse	r25, r24
  106:	01 c0       	rjmp	.+2      	; 0x10a <__vector_9+0x50>
-		PORTD |= 0b00100000;
- 108:	5d 9a       	sbi	0x0b, 5	; 11
-	}
-	
-	if (count == pinB_pwm) {
- 10a:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <count>
- 10e:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <pinB_pwm>
- 112:	98 13       	cpse	r25, r24
- 114:	01 c0       	rjmp	.+2      	; 0x118 <__vector_9+0x5e>
-		PORTD |= 0b00010000;
- 116:	5c 9a       	sbi	0x0b, 4	; 11
+		PORTC |= (1 << PC2);
+ 108:	42 9a       	sbi	0x08, 2	; 8
 	}
 }
- 118:	9f 91       	pop	r25
- 11a:	8f 91       	pop	r24
- 11c:	0f 90       	pop	r0
- 11e:	0f be       	out	0x3f, r0	; 63
- 120:	0f 90       	pop	r0
- 122:	1f 90       	pop	r1
- 124:	18 95       	reti
+ 10a:	9f 91       	pop	r25
+ 10c:	8f 91       	pop	r24
+ 10e:	0f 90       	pop	r0
+ 110:	0f be       	out	0x3f, r0	; 63
+ 112:	0f 90       	pop	r0
+ 114:	1f 90       	pop	r1
+ 116:	18 95       	reti
 
-00000126 <main>:
-	STATE_POURING,
-};	
+00000118 <initAnalogWrite>:
 
-int main(void)
-{
-	DDRD = 0b10000000;
- 126:	80 e8       	ldi	r24, 0x80	; 128
- 128:	8a b9       	out	0x0a, r24	; 10
-	int STATE = 0;
-	int known_home_glass = 0;
-	setup_stepper_glass(150);
- 12a:	86 e9       	ldi	r24, 0x96	; 150
- 12c:	90 e0       	ldi	r25, 0x00	; 0
- 12e:	0e 94 3f 01 	call	0x27e	; 0x27e <setup_stepper_glass>
-	set_position_glass(15000);
- 132:	88 e9       	ldi	r24, 0x98	; 152
- 134:	9a e3       	ldi	r25, 0x3A	; 58
- 136:	0e 94 62 01 	call	0x2c4	; 0x2c4 <set_position_glass>
-	stepper_move_glass(15000);
- 13a:	88 e9       	ldi	r24, 0x98	; 152
- 13c:	9a e3       	ldi	r25, 0x3A	; 58
- 13e:	0e 94 7a 01 	call	0x2f4	; 0x2f4 <stepper_move_glass>
-	  // Start off with red.
-	  rgbColour[0] = 255;
-	  rgbColour[1] = 0;
-	  rgbColour[2] = 0;
-	
+
+
+void initAnalogWrite() {
+	TCCR2B |= (1<<CS20) ;   //clock select is divided by 64.
+ 118:	e1 eb       	ldi	r30, 0xB1	; 177
+ 11a:	f0 e0       	ldi	r31, 0x00	; 0
+ 11c:	80 81       	ld	r24, Z
+ 11e:	81 60       	ori	r24, 0x01	; 1
+ 120:	80 83       	st	Z, r24
+	TCCR2A |= (1<<WGM21);              //sets mode to CTC
+ 122:	e0 eb       	ldi	r30, 0xB0	; 176
+ 124:	f0 e0       	ldi	r31, 0x00	; 0
+ 126:	80 81       	ld	r24, Z
+ 128:	82 60       	ori	r24, 0x02	; 2
+ 12a:	80 83       	st	Z, r24
+	OCR2A = 0x7C;                      //sets TOP to 124 so the timer will overflow every 0.5 ms.
+ 12c:	8c e7       	ldi	r24, 0x7C	; 124
+ 12e:	80 93 b3 00 	sts	0x00B3, r24	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7e00b3>
+	TIMSK2 |= (1<<OCIE2A);              //Output Compare Match A Interrupt Enable
+ 132:	e0 e7       	ldi	r30, 0x70	; 112
+ 134:	f0 e0       	ldi	r31, 0x00	; 0
+ 136:	80 81       	ld	r24, Z
+ 138:	82 60       	ori	r24, 0x02	; 2
+ 13a:	80 83       	st	Z, r24
 	sei();
- 142:	78 94       	sei
+ 13c:	78 94       	sei
+	
+	//PORTD |= (1 << PD7);
+	DDRC |= (1 << PC0) | (1 << PC1) | (1 << PC2);
+ 13e:	87 b1       	in	r24, 0x07	; 7
+ 140:	87 60       	ori	r24, 0x07	; 7
+ 142:	87 b9       	out	0x07, r24	; 7
+ 144:	08 95       	ret
+
+00000146 <analogWrite>:
+}
+
+void analogWrite(int r, int g, int b) {
+	pinR_pwm = 255 - r;
+ 146:	80 95       	com	r24
+ 148:	80 93 36 01 	sts	0x0136, r24	; 0x800136 <pinR_pwm>
+	pinG_pwm = 255 - g;
+ 14c:	60 95       	com	r22
+ 14e:	60 93 38 01 	sts	0x0138, r22	; 0x800138 <pinG_pwm>
+	pinB_pwm = 255 -  b;
+ 152:	40 95       	com	r20
+ 154:	40 93 37 01 	sts	0x0137, r20	; 0x800137 <pinB_pwm>
+ 158:	08 95       	ret
+
+0000015a <init_drinks>:
+#define FINISHED_MOVE 3000
+command drinks[11][16];
+
+int current_receipe;
+int number_of_dispenses[11] = {0, 5, 7, 5, 7, 5, 7, 5, 7 };
+void init_drinks() {
+ 15a:	4f 92       	push	r4
+ 15c:	5f 92       	push	r5
+ 15e:	6f 92       	push	r6
+ 160:	7f 92       	push	r7
+ 162:	8f 92       	push	r8
+ 164:	9f 92       	push	r9
+ 166:	af 92       	push	r10
+ 168:	bf 92       	push	r11
+ 16a:	cf 92       	push	r12
+ 16c:	df 92       	push	r13
+ 16e:	ef 92       	push	r14
+ 170:	ff 92       	push	r15
+ 172:	0f 93       	push	r16
+ 174:	1f 93       	push	r17
+	// JAGGER AND COLA
+	drinks[1][0].amount = DRINK_JAGGER;
+ 176:	e6 e1       	ldi	r30, 0x16	; 22
+ 178:	f1 e0       	ldi	r31, 0x01	; 1
+ 17a:	80 80       	ld	r8, Z
+ 17c:	91 80       	ldd	r9, Z+1	; 0x01
+ 17e:	09 2c       	mov	r0, r9
+ 180:	00 0c       	add	r0, r0
+ 182:	aa 08       	sbc	r10, r10
+ 184:	bb 08       	sbc	r11, r11
+ 186:	80 92 ce 01 	sts	0x01CE, r8	; 0x8001ce <drinks+0x91>
+ 18a:	90 92 cf 01 	sts	0x01CF, r9	; 0x8001cf <drinks+0x92>
+ 18e:	a0 92 d0 01 	sts	0x01D0, r10	; 0x8001d0 <drinks+0x93>
+ 192:	b0 92 d1 01 	sts	0x01D1, r11	; 0x8001d1 <drinks+0x94>
+	drinks[1][0].type = COMMAND_MOVE;
+ 196:	10 92 cd 01 	sts	0x01CD, r1	; 0x8001cd <drinks+0x90>
+	
+	drinks[1][1].amount = 11000;
+ 19a:	48 ef       	ldi	r20, 0xF8	; 248
+ 19c:	5a e2       	ldi	r21, 0x2A	; 42
+ 19e:	60 e0       	ldi	r22, 0x00	; 0
+ 1a0:	70 e0       	ldi	r23, 0x00	; 0
+ 1a2:	40 93 d7 01 	sts	0x01D7, r20	; 0x8001d7 <drinks+0x9a>
+ 1a6:	50 93 d8 01 	sts	0x01D8, r21	; 0x8001d8 <drinks+0x9b>
+ 1aa:	60 93 d9 01 	sts	0x01D9, r22	; 0x8001d9 <drinks+0x9c>
+ 1ae:	70 93 da 01 	sts	0x01DA, r23	; 0x8001da <drinks+0x9d>
+	drinks[1][1].type = COMMAND_DISPENSE;
+ 1b2:	81 e0       	ldi	r24, 0x01	; 1
+ 1b4:	80 93 d6 01 	sts	0x01D6, r24	; 0x8001d6 <drinks+0x99>
+	
+	drinks[1][2].amount = DRINK_COLA;
+ 1b8:	c0 84       	ldd	r12, Z+8	; 0x08
+ 1ba:	d1 84       	ldd	r13, Z+9	; 0x09
+ 1bc:	0d 2c       	mov	r0, r13
+ 1be:	00 0c       	add	r0, r0
+ 1c0:	ee 08       	sbc	r14, r14
+ 1c2:	ff 08       	sbc	r15, r15
+ 1c4:	c0 92 e0 01 	sts	0x01E0, r12	; 0x8001e0 <drinks+0xa3>
+ 1c8:	d0 92 e1 01 	sts	0x01E1, r13	; 0x8001e1 <drinks+0xa4>
+ 1cc:	e0 92 e2 01 	sts	0x01E2, r14	; 0x8001e2 <drinks+0xa5>
+ 1d0:	f0 92 e3 01 	sts	0x01E3, r15	; 0x8001e3 <drinks+0xa6>
+	drinks[1][2].type = COMMAND_MOVE;
+ 1d4:	10 92 df 01 	sts	0x01DF, r1	; 0x8001df <drinks+0xa2>
+	
+	drinks[1][3].amount = 11000;
+ 1d8:	40 93 e9 01 	sts	0x01E9, r20	; 0x8001e9 <drinks+0xac>
+ 1dc:	50 93 ea 01 	sts	0x01EA, r21	; 0x8001ea <drinks+0xad>
+ 1e0:	60 93 eb 01 	sts	0x01EB, r22	; 0x8001eb <drinks+0xae>
+ 1e4:	70 93 ec 01 	sts	0x01EC, r23	; 0x8001ec <drinks+0xaf>
+	drinks[1][3].type = COMMAND_DISPENSE;
+ 1e8:	80 93 e8 01 	sts	0x01E8, r24	; 0x8001e8 <drinks+0xab>
+	
+	drinks[1][4].amount = FINISHED_MOVE;
+ 1ec:	08 eb       	ldi	r16, 0xB8	; 184
+ 1ee:	1b e0       	ldi	r17, 0x0B	; 11
+ 1f0:	20 e0       	ldi	r18, 0x00	; 0
+ 1f2:	30 e0       	ldi	r19, 0x00	; 0
+ 1f4:	00 93 f2 01 	sts	0x01F2, r16	; 0x8001f2 <drinks+0xb5>
+ 1f8:	10 93 f3 01 	sts	0x01F3, r17	; 0x8001f3 <drinks+0xb6>
+ 1fc:	20 93 f4 01 	sts	0x01F4, r18	; 0x8001f4 <drinks+0xb7>
+ 200:	30 93 f5 01 	sts	0x01F5, r19	; 0x8001f5 <drinks+0xb8>
+	drinks[1][4].type = COMMAND_MOVE;
+ 204:	10 92 f1 01 	sts	0x01F1, r1	; 0x8001f1 <drinks+0xb4>
+	
+	
+	// JAGGER AND DOUBLE COLA
+	drinks[2][0].amount = DRINK_JAGGER;
+ 208:	80 92 5e 02 	sts	0x025E, r8	; 0x80025e <drinks+0x121>
+ 20c:	90 92 5f 02 	sts	0x025F, r9	; 0x80025f <drinks+0x122>
+ 210:	a0 92 60 02 	sts	0x0260, r10	; 0x800260 <drinks+0x123>
+ 214:	b0 92 61 02 	sts	0x0261, r11	; 0x800261 <drinks+0x124>
+	drinks[2][0].type = COMMAND_MOVE;
+ 218:	10 92 5d 02 	sts	0x025D, r1	; 0x80025d <drinks+0x120>
+	
+	drinks[2][1].amount = 11000;
+ 21c:	40 93 67 02 	sts	0x0267, r20	; 0x800267 <drinks+0x12a>
+ 220:	50 93 68 02 	sts	0x0268, r21	; 0x800268 <drinks+0x12b>
+ 224:	60 93 69 02 	sts	0x0269, r22	; 0x800269 <drinks+0x12c>
+ 228:	70 93 6a 02 	sts	0x026A, r23	; 0x80026a <drinks+0x12d>
+	drinks[2][1].type = COMMAND_DISPENSE;
+ 22c:	80 93 66 02 	sts	0x0266, r24	; 0x800266 <drinks+0x129>
+	
+	drinks[2][2].amount = DRINK_COLA;
+ 230:	c0 92 70 02 	sts	0x0270, r12	; 0x800270 <drinks+0x133>
+ 234:	d0 92 71 02 	sts	0x0271, r13	; 0x800271 <drinks+0x134>
+ 238:	e0 92 72 02 	sts	0x0272, r14	; 0x800272 <drinks+0x135>
+ 23c:	f0 92 73 02 	sts	0x0273, r15	; 0x800273 <drinks+0x136>
+	drinks[2][2].type = COMMAND_MOVE;
+ 240:	10 92 6f 02 	sts	0x026F, r1	; 0x80026f <drinks+0x132>
+	
+	drinks[2][3].amount = 11000;
+ 244:	40 93 79 02 	sts	0x0279, r20	; 0x800279 <drinks+0x13c>
+ 248:	50 93 7a 02 	sts	0x027A, r21	; 0x80027a <drinks+0x13d>
+ 24c:	60 93 7b 02 	sts	0x027B, r22	; 0x80027b <drinks+0x13e>
+ 250:	70 93 7c 02 	sts	0x027C, r23	; 0x80027c <drinks+0x13f>
+	drinks[2][3].type = COMMAND_DISPENSE;
+ 254:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <drinks+0x13b>
+	
+	drinks[2][4].amount = DRINK_COLA;
+ 258:	c0 92 82 02 	sts	0x0282, r12	; 0x800282 <drinks+0x145>
+ 25c:	d0 92 83 02 	sts	0x0283, r13	; 0x800283 <drinks+0x146>
+ 260:	e0 92 84 02 	sts	0x0284, r14	; 0x800284 <drinks+0x147>
+ 264:	f0 92 85 02 	sts	0x0285, r15	; 0x800285 <drinks+0x148>
+	drinks[2][4].type = COMMAND_WAIT;
+ 268:	92 e0       	ldi	r25, 0x02	; 2
+ 26a:	90 93 81 02 	sts	0x0281, r25	; 0x800281 <drinks+0x144>
+	
+	drinks[2][5].amount = 11000;
+ 26e:	40 93 8b 02 	sts	0x028B, r20	; 0x80028b <drinks+0x14e>
+ 272:	50 93 8c 02 	sts	0x028C, r21	; 0x80028c <drinks+0x14f>
+ 276:	60 93 8d 02 	sts	0x028D, r22	; 0x80028d <drinks+0x150>
+ 27a:	70 93 8e 02 	sts	0x028E, r23	; 0x80028e <drinks+0x151>
+	drinks[2][5].type = COMMAND_DISPENSE;
+ 27e:	80 93 8a 02 	sts	0x028A, r24	; 0x80028a <drinks+0x14d>
+	
+	drinks[2][6].amount = FINISHED_MOVE;
+ 282:	00 93 94 02 	sts	0x0294, r16	; 0x800294 <drinks+0x157>
+ 286:	10 93 95 02 	sts	0x0295, r17	; 0x800295 <drinks+0x158>
+ 28a:	20 93 96 02 	sts	0x0296, r18	; 0x800296 <drinks+0x159>
+ 28e:	30 93 97 02 	sts	0x0297, r19	; 0x800297 <drinks+0x15a>
+	drinks[2][6].type = COMMAND_MOVE;
+ 292:	10 92 93 02 	sts	0x0293, r1	; 0x800293 <drinks+0x156>
+	
+	
+	// RUM + COLA
+	drinks[3][0].amount = DRINK_ROM;
+ 296:	a6 81       	ldd	r26, Z+6	; 0x06
+ 298:	b7 81       	ldd	r27, Z+7	; 0x07
+ 29a:	2d 01       	movw	r4, r26
+ 29c:	bb 0f       	add	r27, r27
+ 29e:	66 08       	sbc	r6, r6
+ 2a0:	77 08       	sbc	r7, r7
+ 2a2:	40 92 ee 02 	sts	0x02EE, r4	; 0x8002ee <drinks+0x1b1>
+ 2a6:	50 92 ef 02 	sts	0x02EF, r5	; 0x8002ef <drinks+0x1b2>
+ 2aa:	60 92 f0 02 	sts	0x02F0, r6	; 0x8002f0 <drinks+0x1b3>
+ 2ae:	70 92 f1 02 	sts	0x02F1, r7	; 0x8002f1 <drinks+0x1b4>
+	drinks[3][0].type = COMMAND_MOVE;
+ 2b2:	10 92 ed 02 	sts	0x02ED, r1	; 0x8002ed <drinks+0x1b0>
+	
+	drinks[3][1].amount = 11000;
+ 2b6:	40 93 f7 02 	sts	0x02F7, r20	; 0x8002f7 <drinks+0x1ba>
+ 2ba:	50 93 f8 02 	sts	0x02F8, r21	; 0x8002f8 <drinks+0x1bb>
+ 2be:	60 93 f9 02 	sts	0x02F9, r22	; 0x8002f9 <drinks+0x1bc>
+ 2c2:	70 93 fa 02 	sts	0x02FA, r23	; 0x8002fa <drinks+0x1bd>
+	drinks[3][1].type = COMMAND_DISPENSE;
+ 2c6:	80 93 f6 02 	sts	0x02F6, r24	; 0x8002f6 <drinks+0x1b9>
+	
+	drinks[3][2].amount = DRINK_COLA;
+ 2ca:	c0 92 00 03 	sts	0x0300, r12	; 0x800300 <drinks+0x1c3>
+ 2ce:	d0 92 01 03 	sts	0x0301, r13	; 0x800301 <drinks+0x1c4>
+ 2d2:	e0 92 02 03 	sts	0x0302, r14	; 0x800302 <drinks+0x1c5>
+ 2d6:	f0 92 03 03 	sts	0x0303, r15	; 0x800303 <drinks+0x1c6>
+	drinks[3][2].type = COMMAND_MOVE;
+ 2da:	10 92 ff 02 	sts	0x02FF, r1	; 0x8002ff <drinks+0x1c2>
+	
+	drinks[3][3].amount = 11000;
+ 2de:	40 93 09 03 	sts	0x0309, r20	; 0x800309 <drinks+0x1cc>
+ 2e2:	50 93 0a 03 	sts	0x030A, r21	; 0x80030a <drinks+0x1cd>
+ 2e6:	60 93 0b 03 	sts	0x030B, r22	; 0x80030b <drinks+0x1ce>
+ 2ea:	70 93 0c 03 	sts	0x030C, r23	; 0x80030c <drinks+0x1cf>
+	drinks[3][3].type = COMMAND_DISPENSE;
+ 2ee:	80 93 08 03 	sts	0x0308, r24	; 0x800308 <drinks+0x1cb>
+	
+	drinks[3][4].amount = FINISHED_MOVE;
+ 2f2:	00 93 12 03 	sts	0x0312, r16	; 0x800312 <drinks+0x1d5>
+ 2f6:	10 93 13 03 	sts	0x0313, r17	; 0x800313 <drinks+0x1d6>
+ 2fa:	20 93 14 03 	sts	0x0314, r18	; 0x800314 <drinks+0x1d7>
+ 2fe:	30 93 15 03 	sts	0x0315, r19	; 0x800315 <drinks+0x1d8>
+	drinks[3][4].type = COMMAND_MOVE;
+ 302:	10 92 11 03 	sts	0x0311, r1	; 0x800311 <drinks+0x1d4>
+	
+	// ROM AND DOUBLE COLA
+	drinks[4][0].amount = DRINK_JAGGER;
+ 306:	80 92 7e 03 	sts	0x037E, r8	; 0x80037e <drinks+0x241>
+ 30a:	90 92 7f 03 	sts	0x037F, r9	; 0x80037f <drinks+0x242>
+ 30e:	a0 92 80 03 	sts	0x0380, r10	; 0x800380 <drinks+0x243>
+ 312:	b0 92 81 03 	sts	0x0381, r11	; 0x800381 <drinks+0x244>
+	drinks[4][0].type = COMMAND_MOVE;
+ 316:	10 92 7d 03 	sts	0x037D, r1	; 0x80037d <drinks+0x240>
+	
+	drinks[4][1].amount = 11000;
+ 31a:	40 93 87 03 	sts	0x0387, r20	; 0x800387 <drinks+0x24a>
+ 31e:	50 93 88 03 	sts	0x0388, r21	; 0x800388 <drinks+0x24b>
+ 322:	60 93 89 03 	sts	0x0389, r22	; 0x800389 <drinks+0x24c>
+ 326:	70 93 8a 03 	sts	0x038A, r23	; 0x80038a <drinks+0x24d>
+	drinks[4][1].type = COMMAND_DISPENSE;
+ 32a:	80 93 86 03 	sts	0x0386, r24	; 0x800386 <drinks+0x249>
+	
+	drinks[4][2].amount = DRINK_COLA;
+ 32e:	c0 92 90 03 	sts	0x0390, r12	; 0x800390 <drinks+0x253>
+ 332:	d0 92 91 03 	sts	0x0391, r13	; 0x800391 <drinks+0x254>
+ 336:	e0 92 92 03 	sts	0x0392, r14	; 0x800392 <drinks+0x255>
+ 33a:	f0 92 93 03 	sts	0x0393, r15	; 0x800393 <drinks+0x256>
+	drinks[4][2].type = COMMAND_MOVE;
+ 33e:	10 92 8f 03 	sts	0x038F, r1	; 0x80038f <drinks+0x252>
+	
+	drinks[4][3].amount = 11000;
+ 342:	40 93 99 03 	sts	0x0399, r20	; 0x800399 <drinks+0x25c>
+ 346:	50 93 9a 03 	sts	0x039A, r21	; 0x80039a <drinks+0x25d>
+ 34a:	60 93 9b 03 	sts	0x039B, r22	; 0x80039b <drinks+0x25e>
+ 34e:	70 93 9c 03 	sts	0x039C, r23	; 0x80039c <drinks+0x25f>
+	drinks[4][3].type = COMMAND_DISPENSE;
+ 352:	80 93 98 03 	sts	0x0398, r24	; 0x800398 <drinks+0x25b>
+	
+	drinks[4][4].amount = DRINK_COLA;
+ 356:	c0 92 a2 03 	sts	0x03A2, r12	; 0x8003a2 <drinks+0x265>
+ 35a:	d0 92 a3 03 	sts	0x03A3, r13	; 0x8003a3 <drinks+0x266>
+ 35e:	e0 92 a4 03 	sts	0x03A4, r14	; 0x8003a4 <drinks+0x267>
+ 362:	f0 92 a5 03 	sts	0x03A5, r15	; 0x8003a5 <drinks+0x268>
+	drinks[2][4].type = COMMAND_WAIT;
+	
+	drinks[4][5].amount = 11000;
+ 366:	40 93 ab 03 	sts	0x03AB, r20	; 0x8003ab <drinks+0x26e>
+ 36a:	50 93 ac 03 	sts	0x03AC, r21	; 0x8003ac <drinks+0x26f>
+ 36e:	60 93 ad 03 	sts	0x03AD, r22	; 0x8003ad <drinks+0x270>
+ 372:	70 93 ae 03 	sts	0x03AE, r23	; 0x8003ae <drinks+0x271>
+	drinks[4][5].type = COMMAND_DISPENSE;
+ 376:	80 93 aa 03 	sts	0x03AA, r24	; 0x8003aa <drinks+0x26d>
+	
+	drinks[4][6].amount = FINISHED_MOVE;
+ 37a:	00 93 b4 03 	sts	0x03B4, r16	; 0x8003b4 <drinks+0x277>
+ 37e:	10 93 b5 03 	sts	0x03B5, r17	; 0x8003b5 <drinks+0x278>
+ 382:	20 93 b6 03 	sts	0x03B6, r18	; 0x8003b6 <drinks+0x279>
+ 386:	30 93 b7 03 	sts	0x03B7, r19	; 0x8003b7 <drinks+0x27a>
+	drinks[4][6].type = COMMAND_MOVE;
+ 38a:	10 92 b3 03 	sts	0x03B3, r1	; 0x8003b3 <drinks+0x276>
+	
+	// MONA + TONIC
+	drinks[5][0].amount = DRINK_MONA;
+ 38e:	84 80       	ldd	r8, Z+4	; 0x04
+ 390:	95 80       	ldd	r9, Z+5	; 0x05
+ 392:	09 2c       	mov	r0, r9
+ 394:	00 0c       	add	r0, r0
+ 396:	aa 08       	sbc	r10, r10
+ 398:	bb 08       	sbc	r11, r11
+ 39a:	80 92 0e 04 	sts	0x040E, r8	; 0x80040e <drinks+0x2d1>
+ 39e:	90 92 0f 04 	sts	0x040F, r9	; 0x80040f <drinks+0x2d2>
+ 3a2:	a0 92 10 04 	sts	0x0410, r10	; 0x800410 <drinks+0x2d3>
+ 3a6:	b0 92 11 04 	sts	0x0411, r11	; 0x800411 <drinks+0x2d4>
+	drinks[5][0].type = COMMAND_MOVE;
+ 3aa:	10 92 0d 04 	sts	0x040D, r1	; 0x80040d <drinks+0x2d0>
+	
+	drinks[5][1].amount = 11000;
+ 3ae:	40 93 17 04 	sts	0x0417, r20	; 0x800417 <drinks+0x2da>
+ 3b2:	50 93 18 04 	sts	0x0418, r21	; 0x800418 <drinks+0x2db>
+ 3b6:	60 93 19 04 	sts	0x0419, r22	; 0x800419 <drinks+0x2dc>
+ 3ba:	70 93 1a 04 	sts	0x041A, r23	; 0x80041a <drinks+0x2dd>
+	drinks[5][1].type = COMMAND_DISPENSE;
+ 3be:	80 93 16 04 	sts	0x0416, r24	; 0x800416 <drinks+0x2d9>
+	
+	drinks[5][2].amount = DRINK_SCHWEEPS;
+ 3c2:	c2 84       	ldd	r12, Z+10	; 0x0a
+ 3c4:	d3 84       	ldd	r13, Z+11	; 0x0b
+ 3c6:	0d 2c       	mov	r0, r13
+ 3c8:	00 0c       	add	r0, r0
+ 3ca:	ee 08       	sbc	r14, r14
+ 3cc:	ff 08       	sbc	r15, r15
+ 3ce:	c0 92 20 04 	sts	0x0420, r12	; 0x800420 <drinks+0x2e3>
+ 3d2:	d0 92 21 04 	sts	0x0421, r13	; 0x800421 <drinks+0x2e4>
+ 3d6:	e0 92 22 04 	sts	0x0422, r14	; 0x800422 <drinks+0x2e5>
+ 3da:	f0 92 23 04 	sts	0x0423, r15	; 0x800423 <drinks+0x2e6>
+	drinks[5][2].type = COMMAND_MOVE;
+ 3de:	10 92 1f 04 	sts	0x041F, r1	; 0x80041f <drinks+0x2e2>
+	
+	drinks[5][3].amount = 11000;
+ 3e2:	40 93 29 04 	sts	0x0429, r20	; 0x800429 <drinks+0x2ec>
+ 3e6:	50 93 2a 04 	sts	0x042A, r21	; 0x80042a <drinks+0x2ed>
+ 3ea:	60 93 2b 04 	sts	0x042B, r22	; 0x80042b <drinks+0x2ee>
+ 3ee:	70 93 2c 04 	sts	0x042C, r23	; 0x80042c <drinks+0x2ef>
+	drinks[5][3].type = COMMAND_DISPENSE;
+ 3f2:	80 93 28 04 	sts	0x0428, r24	; 0x800428 <drinks+0x2eb>
+	
+	drinks[5][4].amount = FINISHED_MOVE;
+ 3f6:	00 93 32 04 	sts	0x0432, r16	; 0x800432 <drinks+0x2f5>
+ 3fa:	10 93 33 04 	sts	0x0433, r17	; 0x800433 <drinks+0x2f6>
+ 3fe:	20 93 34 04 	sts	0x0434, r18	; 0x800434 <drinks+0x2f7>
+ 402:	30 93 35 04 	sts	0x0435, r19	; 0x800435 <drinks+0x2f8>
+	drinks[5][4].type = COMMAND_MOVE;
+ 406:	10 92 31 04 	sts	0x0431, r1	; 0x800431 <drinks+0x2f4>
+	
+	
+	// MONA AND DOUBLE TONIC
+	drinks[6][0].amount = DRINK_MONA;
+ 40a:	80 92 9e 04 	sts	0x049E, r8	; 0x80049e <drinks+0x361>
+ 40e:	90 92 9f 04 	sts	0x049F, r9	; 0x80049f <drinks+0x362>
+ 412:	a0 92 a0 04 	sts	0x04A0, r10	; 0x8004a0 <drinks+0x363>
+ 416:	b0 92 a1 04 	sts	0x04A1, r11	; 0x8004a1 <drinks+0x364>
+	drinks[6][0].type = COMMAND_MOVE;
+ 41a:	10 92 9d 04 	sts	0x049D, r1	; 0x80049d <drinks+0x360>
+	
+	drinks[6][1].amount = 11000;
+ 41e:	40 93 a7 04 	sts	0x04A7, r20	; 0x8004a7 <drinks+0x36a>
+ 422:	50 93 a8 04 	sts	0x04A8, r21	; 0x8004a8 <drinks+0x36b>
+ 426:	60 93 a9 04 	sts	0x04A9, r22	; 0x8004a9 <drinks+0x36c>
+ 42a:	70 93 aa 04 	sts	0x04AA, r23	; 0x8004aa <drinks+0x36d>
+	drinks[6][1].type = COMMAND_DISPENSE;
+ 42e:	80 93 a6 04 	sts	0x04A6, r24	; 0x8004a6 <drinks+0x369>
+	
+	drinks[6][2].amount = DRINK_SCHWEEPS;
+ 432:	c0 92 b0 04 	sts	0x04B0, r12	; 0x8004b0 <drinks+0x373>
+ 436:	d0 92 b1 04 	sts	0x04B1, r13	; 0x8004b1 <drinks+0x374>
+ 43a:	e0 92 b2 04 	sts	0x04B2, r14	; 0x8004b2 <drinks+0x375>
+ 43e:	f0 92 b3 04 	sts	0x04B3, r15	; 0x8004b3 <drinks+0x376>
+	drinks[6][2].type = COMMAND_MOVE;
+ 442:	10 92 af 04 	sts	0x04AF, r1	; 0x8004af <drinks+0x372>
+	
+	drinks[6][3].amount = 11000;
+ 446:	40 93 b9 04 	sts	0x04B9, r20	; 0x8004b9 <drinks+0x37c>
+ 44a:	50 93 ba 04 	sts	0x04BA, r21	; 0x8004ba <drinks+0x37d>
+ 44e:	60 93 bb 04 	sts	0x04BB, r22	; 0x8004bb <drinks+0x37e>
+ 452:	70 93 bc 04 	sts	0x04BC, r23	; 0x8004bc <drinks+0x37f>
+	drinks[6][3].type = COMMAND_DISPENSE;
+ 456:	80 93 b8 04 	sts	0x04B8, r24	; 0x8004b8 <drinks+0x37b>
+	
+	drinks[6][4].amount = DRINK_SCHWEEPS;
+ 45a:	c0 92 c2 04 	sts	0x04C2, r12	; 0x8004c2 <drinks+0x385>
+ 45e:	d0 92 c3 04 	sts	0x04C3, r13	; 0x8004c3 <drinks+0x386>
+ 462:	e0 92 c4 04 	sts	0x04C4, r14	; 0x8004c4 <drinks+0x387>
+ 466:	f0 92 c5 04 	sts	0x04C5, r15	; 0x8004c5 <drinks+0x388>
+	drinks[2][4].type = COMMAND_WAIT;
+	
+	drinks[6][5].amount = 11000;
+ 46a:	40 93 cb 04 	sts	0x04CB, r20	; 0x8004cb <drinks+0x38e>
+ 46e:	50 93 cc 04 	sts	0x04CC, r21	; 0x8004cc <drinks+0x38f>
+ 472:	60 93 cd 04 	sts	0x04CD, r22	; 0x8004cd <drinks+0x390>
+ 476:	70 93 ce 04 	sts	0x04CE, r23	; 0x8004ce <drinks+0x391>
+	drinks[6][5].type = COMMAND_DISPENSE;
+ 47a:	80 93 ca 04 	sts	0x04CA, r24	; 0x8004ca <drinks+0x38d>
+	
+	drinks[6][6].amount = FINISHED_MOVE;
+ 47e:	00 93 d4 04 	sts	0x04D4, r16	; 0x8004d4 <drinks+0x397>
+ 482:	10 93 d5 04 	sts	0x04D5, r17	; 0x8004d5 <drinks+0x398>
+ 486:	20 93 d6 04 	sts	0x04D6, r18	; 0x8004d6 <drinks+0x399>
+ 48a:	30 93 d7 04 	sts	0x04D7, r19	; 0x8004d7 <drinks+0x39a>
+	drinks[6][6].type = COMMAND_MOVE;
+ 48e:	10 92 d3 04 	sts	0x04D3, r1	; 0x8004d3 <drinks+0x396>
+	
+	
+	// MONA + TONIC
+	drinks[7][0].amount = DRINK_GIN;
+ 492:	42 80       	ldd	r4, Z+2	; 0x02
+ 494:	53 80       	ldd	r5, Z+3	; 0x03
+ 496:	05 2c       	mov	r0, r5
+ 498:	00 0c       	add	r0, r0
+ 49a:	66 08       	sbc	r6, r6
+ 49c:	77 08       	sbc	r7, r7
+ 49e:	40 92 2e 05 	sts	0x052E, r4	; 0x80052e <drinks+0x3f1>
+ 4a2:	50 92 2f 05 	sts	0x052F, r5	; 0x80052f <drinks+0x3f2>
+ 4a6:	60 92 30 05 	sts	0x0530, r6	; 0x800530 <drinks+0x3f3>
+ 4aa:	70 92 31 05 	sts	0x0531, r7	; 0x800531 <drinks+0x3f4>
+	drinks[7][0].type = COMMAND_MOVE;
+ 4ae:	10 92 2d 05 	sts	0x052D, r1	; 0x80052d <drinks+0x3f0>
+	
+	drinks[7][1].amount = 11000;
+ 4b2:	40 93 37 05 	sts	0x0537, r20	; 0x800537 <drinks+0x3fa>
+ 4b6:	50 93 38 05 	sts	0x0538, r21	; 0x800538 <drinks+0x3fb>
+ 4ba:	60 93 39 05 	sts	0x0539, r22	; 0x800539 <drinks+0x3fc>
+ 4be:	70 93 3a 05 	sts	0x053A, r23	; 0x80053a <drinks+0x3fd>
+	drinks[7][1].type = COMMAND_DISPENSE;
+ 4c2:	80 93 36 05 	sts	0x0536, r24	; 0x800536 <drinks+0x3f9>
+	
+	drinks[7][2].amount = DRINK_SCHWEEPS;
+ 4c6:	c0 92 40 05 	sts	0x0540, r12	; 0x800540 <drinks+0x403>
+ 4ca:	d0 92 41 05 	sts	0x0541, r13	; 0x800541 <drinks+0x404>
+ 4ce:	e0 92 42 05 	sts	0x0542, r14	; 0x800542 <drinks+0x405>
+ 4d2:	f0 92 43 05 	sts	0x0543, r15	; 0x800543 <drinks+0x406>
+	drinks[7][2].type = COMMAND_MOVE;
+ 4d6:	10 92 3f 05 	sts	0x053F, r1	; 0x80053f <drinks+0x402>
+	
+	drinks[7][3].amount = 11000;
+ 4da:	40 93 49 05 	sts	0x0549, r20	; 0x800549 <drinks+0x40c>
+ 4de:	50 93 4a 05 	sts	0x054A, r21	; 0x80054a <drinks+0x40d>
+ 4e2:	60 93 4b 05 	sts	0x054B, r22	; 0x80054b <drinks+0x40e>
+ 4e6:	70 93 4c 05 	sts	0x054C, r23	; 0x80054c <drinks+0x40f>
+	drinks[7][3].type = COMMAND_DISPENSE;
+ 4ea:	80 93 48 05 	sts	0x0548, r24	; 0x800548 <drinks+0x40b>
+	
+	drinks[7][4].amount = FINISHED_MOVE;
+ 4ee:	00 93 52 05 	sts	0x0552, r16	; 0x800552 <drinks+0x415>
+ 4f2:	10 93 53 05 	sts	0x0553, r17	; 0x800553 <drinks+0x416>
+ 4f6:	20 93 54 05 	sts	0x0554, r18	; 0x800554 <drinks+0x417>
+ 4fa:	30 93 55 05 	sts	0x0555, r19	; 0x800555 <drinks+0x418>
+	drinks[7][4].type = COMMAND_MOVE;
+ 4fe:	10 92 51 05 	sts	0x0551, r1	; 0x800551 <drinks+0x414>
+	
+	
+	// MONA AND DOUBLE TONIC
+	drinks[8][0].amount = DRINK_MONA;
+ 502:	80 92 be 05 	sts	0x05BE, r8	; 0x8005be <drinks+0x481>
+ 506:	90 92 bf 05 	sts	0x05BF, r9	; 0x8005bf <drinks+0x482>
+ 50a:	a0 92 c0 05 	sts	0x05C0, r10	; 0x8005c0 <drinks+0x483>
+ 50e:	b0 92 c1 05 	sts	0x05C1, r11	; 0x8005c1 <drinks+0x484>
+	drinks[8][0].type = COMMAND_MOVE;
+ 512:	10 92 bd 05 	sts	0x05BD, r1	; 0x8005bd <drinks+0x480>
+	
+	drinks[8][1].amount = 11000;
+ 516:	40 93 c7 05 	sts	0x05C7, r20	; 0x8005c7 <drinks+0x48a>
+ 51a:	50 93 c8 05 	sts	0x05C8, r21	; 0x8005c8 <drinks+0x48b>
+ 51e:	60 93 c9 05 	sts	0x05C9, r22	; 0x8005c9 <drinks+0x48c>
+ 522:	70 93 ca 05 	sts	0x05CA, r23	; 0x8005ca <drinks+0x48d>
+	drinks[8][1].type = COMMAND_DISPENSE;
+ 526:	80 93 c6 05 	sts	0x05C6, r24	; 0x8005c6 <drinks+0x489>
+	
+	drinks[8][2].amount = DRINK_SCHWEEPS;
+ 52a:	c0 92 d0 05 	sts	0x05D0, r12	; 0x8005d0 <drinks+0x493>
+ 52e:	d0 92 d1 05 	sts	0x05D1, r13	; 0x8005d1 <drinks+0x494>
+ 532:	e0 92 d2 05 	sts	0x05D2, r14	; 0x8005d2 <drinks+0x495>
+ 536:	f0 92 d3 05 	sts	0x05D3, r15	; 0x8005d3 <drinks+0x496>
+	drinks[8][2].type = COMMAND_MOVE;
+ 53a:	10 92 cf 05 	sts	0x05CF, r1	; 0x8005cf <drinks+0x492>
+	
+	drinks[8][3].amount = 11000;
+ 53e:	40 93 d9 05 	sts	0x05D9, r20	; 0x8005d9 <drinks+0x49c>
+ 542:	50 93 da 05 	sts	0x05DA, r21	; 0x8005da <drinks+0x49d>
+ 546:	60 93 db 05 	sts	0x05DB, r22	; 0x8005db <drinks+0x49e>
+ 54a:	70 93 dc 05 	sts	0x05DC, r23	; 0x8005dc <drinks+0x49f>
+	drinks[8][3].type = COMMAND_DISPENSE;
+ 54e:	80 93 d8 05 	sts	0x05D8, r24	; 0x8005d8 <drinks+0x49b>
+	
+	drinks[8][4].amount = DRINK_SCHWEEPS;
+ 552:	c0 92 e2 05 	sts	0x05E2, r12	; 0x8005e2 <drinks+0x4a5>
+ 556:	d0 92 e3 05 	sts	0x05E3, r13	; 0x8005e3 <drinks+0x4a6>
+ 55a:	e0 92 e4 05 	sts	0x05E4, r14	; 0x8005e4 <drinks+0x4a7>
+ 55e:	f0 92 e5 05 	sts	0x05E5, r15	; 0x8005e5 <drinks+0x4a8>
+	drinks[2][4].type = COMMAND_WAIT;
+	
+	drinks[8][5].amount = 11000;
+ 562:	40 93 eb 05 	sts	0x05EB, r20	; 0x8005eb <drinks+0x4ae>
+ 566:	50 93 ec 05 	sts	0x05EC, r21	; 0x8005ec <drinks+0x4af>
+ 56a:	60 93 ed 05 	sts	0x05ED, r22	; 0x8005ed <drinks+0x4b0>
+ 56e:	70 93 ee 05 	sts	0x05EE, r23	; 0x8005ee <drinks+0x4b1>
+	drinks[8][5].type = COMMAND_DISPENSE;
+ 572:	80 93 ea 05 	sts	0x05EA, r24	; 0x8005ea <drinks+0x4ad>
+	
+	drinks[8][6].amount = FINISHED_MOVE;
+ 576:	00 93 f4 05 	sts	0x05F4, r16	; 0x8005f4 <drinks+0x4b7>
+ 57a:	10 93 f5 05 	sts	0x05F5, r17	; 0x8005f5 <drinks+0x4b8>
+ 57e:	20 93 f6 05 	sts	0x05F6, r18	; 0x8005f6 <drinks+0x4b9>
+ 582:	30 93 f7 05 	sts	0x05F7, r19	; 0x8005f7 <drinks+0x4ba>
+	drinks[8][6].type = COMMAND_MOVE;
+ 586:	10 92 f3 05 	sts	0x05F3, r1	; 0x8005f3 <drinks+0x4b6>
+	
+}
+ 58a:	1f 91       	pop	r17
+ 58c:	0f 91       	pop	r16
+ 58e:	ff 90       	pop	r15
+ 590:	ef 90       	pop	r14
+ 592:	df 90       	pop	r13
+ 594:	cf 90       	pop	r12
+ 596:	bf 90       	pop	r11
+ 598:	af 90       	pop	r10
+ 59a:	9f 90       	pop	r9
+ 59c:	8f 90       	pop	r8
+ 59e:	7f 90       	pop	r7
+ 5a0:	6f 90       	pop	r6
+ 5a2:	5f 90       	pop	r5
+ 5a4:	4f 90       	pop	r4
+ 5a6:	08 95       	ret
+
+000005a8 <main>:
 
 int main(void)
 {
-	DDRD = 0b10000000;
-	int STATE = 0;
+	int STATE = STATE_WAITING;
 	int known_home_glass = 0;
- 144:	00 e0       	ldi	r16, 0x00	; 0
- 146:	10 e0       	ldi	r17, 0x00	; 0
-};	
+	setup_steppers();
+ 5a8:	0e 94 44 05 	call	0xa88	; 0xa88 <setup_steppers>
+	
+	setup_stepper_glass(3);
+ 5ac:	83 e0       	ldi	r24, 0x03	; 3
+ 5ae:	90 e0       	ldi	r25, 0x00	; 0
+ 5b0:	0e 94 66 05 	call	0xacc	; 0xacc <setup_stepper_glass>
+	set_position_glass(15000);
+ 5b4:	88 e9       	ldi	r24, 0x98	; 152
+ 5b6:	9a e3       	ldi	r25, 0x3A	; 58
+ 5b8:	0e 94 78 05 	call	0xaf0	; 0xaf0 <set_position_glass>
+	stepper_move_glass(15000);
+ 5bc:	88 e9       	ldi	r24, 0x98	; 152
+ 5be:	9a e3       	ldi	r25, 0x3A	; 58
+ 5c0:	0e 94 8b 05 	call	0xb16	; 0xb16 <stepper_move_glass>
+	
+	setup_stepper_disp(2);
+ 5c4:	82 e0       	ldi	r24, 0x02	; 2
+ 5c6:	90 e0       	ldi	r25, 0x00	; 0
+ 5c8:	0e 94 6f 05 	call	0xade	; 0xade <setup_stepper_disp>
+	set_position_disp(0);
+ 5cc:	80 e0       	ldi	r24, 0x00	; 0
+ 5ce:	90 e0       	ldi	r25, 0x00	; 0
+ 5d0:	0e 94 90 05 	call	0xb20	; 0xb20 <set_position_disp>
+	stepper_move_disp(0);
+ 5d4:	80 e0       	ldi	r24, 0x00	; 0
+ 5d6:	90 e0       	ldi	r25, 0x00	; 0
+ 5d8:	0e 94 a8 05 	call	0xb50	; 0xb50 <stepper_move_disp>
+	
+	initAnalogWrite();
+ 5dc:	0e 94 8c 00 	call	0x118	; 0x118 <initAnalogWrite>
+	init_orderer();
+ 5e0:	0e 94 41 04 	call	0x882	; 0x882 <init_orderer>
+	init_drinks();
+ 5e4:	0e 94 ad 00 	call	0x15a	; 0x15a <init_drinks>
+	//
+	uint8_t current_command = 0;
+	uint8_t max_command = 0;
+	
+	//analogWrite(p.r, p.g, p.b);
+		DDRD |= (1 << PD7);
+ 5e8:	57 9a       	sbi	0x0a, 7	; 10
+		//DDRB = 0xFF;
+	sei();
+ 5ea:	78 94       	sei
+	init_drinks();
+
+	rgb_color p;
+	p.r = 0;
+	p.g = 0;
+	p.b = 255;
+ 5ec:	ff 24       	eor	r15, r15
+ 5ee:	fa 94       	dec	r15
+	init_orderer();
+	init_drinks();
+
+	rgb_color p;
+	p.r = 0;
+	p.g = 0;
+ 5f0:	00 e0       	ldi	r16, 0x00	; 0
+	initAnalogWrite();
+	init_orderer();
+	init_drinks();
+
+	rgb_color p;
+	p.r = 0;
+ 5f2:	10 e0       	ldi	r17, 0x00	; 0
+	p.g = 0;
+	p.b = 255;
+	//
+	uint8_t current_command = 0;
+	uint8_t max_command = 0;
+ 5f4:	91 2c       	mov	r9, r1
+	rgb_color p;
+	p.r = 0;
+	p.g = 0;
+	p.b = 255;
+	//
+	uint8_t current_command = 0;
+ 5f6:	e1 2c       	mov	r14, r1
+}
 
 int main(void)
 {
-	DDRD = 0b10000000;
-	int STATE = 0;
- 148:	c0 e0       	ldi	r28, 0x00	; 0
- 14a:	d0 e0       	ldi	r29, 0x00	; 0
-				if (get_position_glass() < 300)
-					stepper_move_glass(300);
+	int STATE = STATE_WAITING;
+	int known_home_glass = 0;
+ 5f8:	c1 2c       	mov	r12, r1
+ 5fa:	d1 2c       	mov	r13, r1
+	
+}
+
+int main(void)
+{
+	int STATE = STATE_WAITING;
+ 5fc:	c0 e0       	ldi	r28, 0x00	; 0
+ 5fe:	d0 e0       	ldi	r29, 0x00	; 0
+				} else {
+					STATE = STATE_WAITING;	
+				}
+			}
+		} else if( STATE == STATE_PAUSE) {
+			STATE = STATE_WAITING;
+ 600:	a1 2c       	mov	r10, r1
+ 602:	b1 2c       	mov	r11, r1
+				}
 			}
 		} else if (STATE == STATE_HOMING) {
+			PORTD |= (1 << PD7);
 			if (!is_moving_glass()) {
 				known_home_glass = 1;
- 14c:	cc 24       	eor	r12, r12
- 14e:	c3 94       	inc	r12
- 150:	d1 2c       	mov	r13, r1
-				STATE = STATE_WAITING;
- 152:	e1 2c       	mov	r14, r1
- 154:	f1 2c       	mov	r15, r1
-	
+ 604:	66 24       	eor	r6, r6
+ 606:	63 94       	inc	r6
+ 608:	71 2c       	mov	r7, r1
+						max_command = number_of_dispenses[data];
+						PORTD |= (1 << PD7);
+					}
+				} else {
+					if (current_command != max_command) {
+						if (drinks[current_receipe][current_command].type == COMMAND_MOVE) {
+ 60a:	0f 2e       	mov	r0, r31
+ 60c:	f0 e9       	ldi	r31, 0x90	; 144
+ 60e:	8f 2e       	mov	r8, r31
+ 610:	f0 2d       	mov	r31, r0
+							STATE = STATE_MOVING_GLASS;
+							stepper_move_glass(drinks[current_receipe][current_command].amount);
+						} else if (drinks[current_receipe][current_command].type == COMMAND_DISPENSE) {
+							STATE = STATE_POURING;
+ 612:	0f 2e       	mov	r0, r31
+ 614:	f3 e0       	ldi	r31, 0x03	; 3
+ 616:	2f 2e       	mov	r2, r31
+ 618:	f0 2d       	mov	r31, r0
+ 61a:	31 2c       	mov	r3, r1
+						PORTD |= (1 << PD7);
+					}
+				} else {
+					if (current_command != max_command) {
+						if (drinks[current_receipe][current_command].type == COMMAND_MOVE) {
+							STATE = STATE_MOVING_GLASS;
+ 61c:	68 94       	set
+ 61e:	44 24       	eor	r4, r4
+ 620:	41 f8       	bld	r4, 1
+ 622:	51 2c       	mov	r5, r1
+ 624:	02 c0       	rjmp	.+4      	; 0x62a <main+0x82>
+			if (!is_moving_disp()) {
+				if (get_position_disp() > 0) {
+					_delay_ms(2500);
+					stepper_move_disp(0);
+				} else {
+					STATE = STATE_WAITING;	
+ 626:	ca 2d       	mov	r28, r10
+ 628:	db 2d       	mov	r29, r11
+		DDRD |= (1 << PD7);
+		//DDRB = 0xFF;
 	sei();
-	int pas = 0;
     while (1) 
     {
-		PORTD &= ~0b10000000;
- 156:	5f 98       	cbi	0x0b, 7	; 11
+			PORTD &= ~0b10000000;
+ 62a:	5f 98       	cbi	0x0b, 7	; 11
+					if (p.r > 0 && p.b == 0) {
+ 62c:	11 23       	and	r17, r17
+ 62e:	09 f4       	brne	.+2      	; 0x632 <main+0x8a>
+ 630:	ec c0       	rjmp	.+472    	; 0x80a <main+0x262>
+ 632:	f1 10       	cpse	r15, r1
+ 634:	04 c0       	rjmp	.+8      	; 0x63e <main+0x96>
+					p.r--;
+ 636:	11 50       	subi	r17, 0x01	; 1
+					p.g++;
+ 638:	0f 5f       	subi	r16, 0xFF	; 255
+					}
+					if (p.g > 0 && p.r == 0) {
+ 63a:	21 f4       	brne	.+8      	; 0x644 <main+0x9c>
+ 63c:	0f c0       	rjmp	.+30     	; 0x65c <main+0xb4>
+ 63e:	00 23       	and	r16, r16
+ 640:	09 f4       	brne	.+2      	; 0x644 <main+0x9c>
+ 642:	e6 c0       	rjmp	.+460    	; 0x810 <main+0x268>
+ 644:	11 11       	cpse	r17, r1
+ 646:	03 c0       	rjmp	.+6      	; 0x64e <main+0xa6>
+					p.g--;
+ 648:	01 50       	subi	r16, 0x01	; 1
+					p.b++;
+ 64a:	f3 94       	inc	r15
+ 64c:	10 e0       	ldi	r17, 0x00	; 0
+					}
+					if (p.b > 0 && p.g == 0) {
+ 64e:	ff 20       	and	r15, r15
+ 650:	29 f0       	breq	.+10     	; 0x65c <main+0xb4>
+ 652:	01 11       	cpse	r16, r1
+ 654:	03 c0       	rjmp	.+6      	; 0x65c <main+0xb4>
+					p.r++;
+ 656:	1f 5f       	subi	r17, 0xFF	; 255
+					p.b--;
+ 658:	fa 94       	dec	r15
+ 65a:	00 e0       	ldi	r16, 0x00	; 0
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 65c:	8f e1       	ldi	r24, 0x1F	; 31
+ 65e:	93 e0       	ldi	r25, 0x03	; 3
+ 660:	01 97       	sbiw	r24, 0x01	; 1
+ 662:	f1 f7       	brne	.-4      	; 0x660 <main+0xb8>
+ 664:	00 c0       	rjmp	.+0      	; 0x666 <main+0xbe>
+ 666:	00 00       	nop
+					_delay_us(200);
+					//rgbColour[0] = 255;
+					//rgbColour[1] = 255;
+					//rgbColour[2] = 255;
+					
+					analogWrite(p.r, p.g, p.b);
+ 668:	4f 2d       	mov	r20, r15
+ 66a:	50 e0       	ldi	r21, 0x00	; 0
+ 66c:	60 2f       	mov	r22, r16
+ 66e:	70 e0       	ldi	r23, 0x00	; 0
+ 670:	81 2f       	mov	r24, r17
+ 672:	90 e0       	ldi	r25, 0x00	; 0
+ 674:	0e 94 a3 00 	call	0x146	; 0x146 <analogWrite>
 		if (STATE == STATE_WAITING) {
- 158:	20 97       	sbiw	r28, 0x00	; 0
- 15a:	a9 f4       	brne	.+42     	; 0x186 <main+0x60>
-			PORTD |= 0b10000000;
- 15c:	5f 9a       	sbi	0x0b, 7	; 11
-		
+ 678:	20 97       	sbiw	r28, 0x00	; 0
+ 67a:	09 f0       	breq	.+2      	; 0x67e <main+0xd6>
+ 67c:	8d c0       	rjmp	.+282    	; 0x798 <main+0x1f0>
 			if (!known_home_glass) {
- 15e:	01 15       	cp	r16, r1
- 160:	11 05       	cpc	r17, r1
- 162:	39 f4       	brne	.+14     	; 0x172 <main+0x4c>
+ 67e:	c1 14       	cp	r12, r1
+ 680:	d1 04       	cpc	r13, r1
+ 682:	59 f4       	brne	.+22     	; 0x69a <main+0xf2>
 				STATE = STATE_HOMING;
 				stepper_move_glass(0);
- 164:	8e 2d       	mov	r24, r14
- 166:	9f 2d       	mov	r25, r15
- 168:	0e 94 7a 01 	call	0x2f4	; 0x2f4 <stepper_move_glass>
-		PORTD &= ~0b10000000;
+ 684:	8a 2d       	mov	r24, r10
+ 686:	9b 2d       	mov	r25, r11
+ 688:	0e 94 8b 05 	call	0xb16	; 0xb16 <stepper_move_glass>
+				stepper_move_disp(0);
+ 68c:	8a 2d       	mov	r24, r10
+ 68e:	9b 2d       	mov	r25, r11
+ 690:	0e 94 a8 05 	call	0xb50	; 0xb50 <stepper_move_disp>
+					//rgbColour[2] = 255;
+					
+					analogWrite(p.r, p.g, p.b);
 		if (STATE == STATE_WAITING) {
-			PORTD |= 0b10000000;
-		
 			if (!known_home_glass) {
 				STATE = STATE_HOMING;
- 16c:	cc 2d       	mov	r28, r12
- 16e:	dd 2d       	mov	r29, r13
- 170:	f2 cf       	rjmp	.-28     	; 0x156 <main+0x30>
+ 694:	c6 2d       	mov	r28, r6
+ 696:	d7 2d       	mov	r29, r7
+ 698:	c8 cf       	rjmp	.-112    	; 0x62a <main+0x82>
 				stepper_move_glass(0);
+				stepper_move_disp(0);
 			} else {
-				if (get_position_glass() < 300)
- 172:	0e 94 75 01 	call	0x2ea	; 0x2ea <get_position_glass>
- 176:	8c 32       	cpi	r24, 0x2C	; 44
- 178:	91 40       	sbci	r25, 0x01	; 1
- 17a:	6c f7       	brge	.-38     	; 0x156 <main+0x30>
-					stepper_move_glass(300);
- 17c:	8c e2       	ldi	r24, 0x2C	; 44
- 17e:	91 e0       	ldi	r25, 0x01	; 1
- 180:	0e 94 7a 01 	call	0x2f4	; 0x2f4 <stepper_move_glass>
- 184:	e8 cf       	rjmp	.-48     	; 0x156 <main+0x30>
+				if (current_receipe == 0) {
+ 69a:	80 91 3b 01 	lds	r24, 0x013B	; 0x80013b <current_receipe>
+ 69e:	90 91 3c 01 	lds	r25, 0x013C	; 0x80013c <current_receipe+0x1>
+ 6a2:	00 97       	sbiw	r24, 0x00	; 0
+ 6a4:	99 f4       	brne	.+38     	; 0x6cc <main+0x124>
+					uint8_t data = get_orderer_data();
+ 6a6:	0e 94 52 04 	call	0x8a4	; 0x8a4 <get_orderer_data>
+					if (data) {
+ 6aa:	88 23       	and	r24, r24
+ 6ac:	09 f4       	brne	.+2      	; 0x6b0 <main+0x108>
+ 6ae:	bd cf       	rjmp	.-134    	; 0x62a <main+0x82>
+						current_command = 0;
+						current_receipe = data;
+ 6b0:	90 e0       	ldi	r25, 0x00	; 0
+ 6b2:	90 93 3c 01 	sts	0x013C, r25	; 0x80013c <current_receipe+0x1>
+ 6b6:	80 93 3b 01 	sts	0x013B, r24	; 0x80013b <current_receipe>
+						max_command = number_of_dispenses[data];
+ 6ba:	88 0f       	add	r24, r24
+ 6bc:	99 1f       	adc	r25, r25
+ 6be:	fc 01       	movw	r30, r24
+ 6c0:	e0 50       	subi	r30, 0x00	; 0
+ 6c2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 6c4:	90 80       	ld	r9, Z
+						PORTD |= (1 << PD7);
+ 6c6:	5f 9a       	sbi	0x0b, 7	; 11
+				stepper_move_disp(0);
+			} else {
+				if (current_receipe == 0) {
+					uint8_t data = get_orderer_data();
+					if (data) {
+						current_command = 0;
+ 6c8:	e1 2c       	mov	r14, r1
+ 6ca:	af cf       	rjmp	.-162    	; 0x62a <main+0x82>
+						current_receipe = data;
+						max_command = number_of_dispenses[data];
+						PORTD |= (1 << PD7);
+					}
+				} else {
+					if (current_command != max_command) {
+ 6cc:	e9 14       	cp	r14, r9
+ 6ce:	09 f4       	brne	.+2      	; 0x6d2 <main+0x12a>
+ 6d0:	5d c0       	rjmp	.+186    	; 0x78c <main+0x1e4>
+						if (drinks[current_receipe][current_command].type == COMMAND_MOVE) {
+ 6d2:	2e 2d       	mov	r18, r14
+ 6d4:	30 e0       	ldi	r19, 0x00	; 0
+ 6d6:	f9 01       	movw	r30, r18
+ 6d8:	ee 0f       	add	r30, r30
+ 6da:	ff 1f       	adc	r31, r31
+ 6dc:	ee 0f       	add	r30, r30
+ 6de:	ff 1f       	adc	r31, r31
+ 6e0:	ee 0f       	add	r30, r30
+ 6e2:	ff 1f       	adc	r31, r31
+ 6e4:	e2 0f       	add	r30, r18
+ 6e6:	f3 1f       	adc	r31, r19
+ 6e8:	88 9e       	mul	r8, r24
+ 6ea:	a0 01       	movw	r20, r0
+ 6ec:	89 9e       	mul	r8, r25
+ 6ee:	50 0d       	add	r21, r0
+ 6f0:	11 24       	eor	r1, r1
+ 6f2:	e4 0f       	add	r30, r20
+ 6f4:	f5 1f       	adc	r31, r21
+ 6f6:	e3 5c       	subi	r30, 0xC3	; 195
+ 6f8:	fe 4f       	sbci	r31, 0xFE	; 254
+ 6fa:	40 81       	ld	r20, Z
+ 6fc:	41 11       	cpse	r20, r1
+ 6fe:	19 c0       	rjmp	.+50     	; 0x732 <main+0x18a>
+							STATE = STATE_MOVING_GLASS;
+							stepper_move_glass(drinks[current_receipe][current_command].amount);
+ 700:	f9 01       	movw	r30, r18
+ 702:	ee 0f       	add	r30, r30
+ 704:	ff 1f       	adc	r31, r31
+ 706:	ee 0f       	add	r30, r30
+ 708:	ff 1f       	adc	r31, r31
+ 70a:	ee 0f       	add	r30, r30
+ 70c:	ff 1f       	adc	r31, r31
+ 70e:	e2 0f       	add	r30, r18
+ 710:	f3 1f       	adc	r31, r19
+ 712:	88 9e       	mul	r8, r24
+ 714:	a0 01       	movw	r20, r0
+ 716:	89 9e       	mul	r8, r25
+ 718:	50 0d       	add	r21, r0
+ 71a:	11 24       	eor	r1, r1
+ 71c:	e4 0f       	add	r30, r20
+ 71e:	f5 1f       	adc	r31, r21
+ 720:	e3 5c       	subi	r30, 0xC3	; 195
+ 722:	fe 4f       	sbci	r31, 0xFE	; 254
+ 724:	81 81       	ldd	r24, Z+1	; 0x01
+ 726:	92 81       	ldd	r25, Z+2	; 0x02
+ 728:	0e 94 8b 05 	call	0xb16	; 0xb16 <stepper_move_glass>
+						PORTD |= (1 << PD7);
+					}
+				} else {
+					if (current_command != max_command) {
+						if (drinks[current_receipe][current_command].type == COMMAND_MOVE) {
+							STATE = STATE_MOVING_GLASS;
+ 72c:	c4 2d       	mov	r28, r4
+ 72e:	d5 2d       	mov	r29, r5
+ 730:	2b c0       	rjmp	.+86     	; 0x788 <main+0x1e0>
+							stepper_move_glass(drinks[current_receipe][current_command].amount);
+						} else if (drinks[current_receipe][current_command].type == COMMAND_DISPENSE) {
+ 732:	41 30       	cpi	r20, 0x01	; 1
+ 734:	d1 f4       	brne	.+52     	; 0x76a <main+0x1c2>
+							STATE = STATE_POURING;
+							stepper_move_disp(drinks[current_receipe][current_command].amount);
+ 736:	a9 01       	movw	r20, r18
+ 738:	44 0f       	add	r20, r20
+ 73a:	55 1f       	adc	r21, r21
+ 73c:	44 0f       	add	r20, r20
+ 73e:	55 1f       	adc	r21, r21
+ 740:	44 0f       	add	r20, r20
+ 742:	55 1f       	adc	r21, r21
+ 744:	24 0f       	add	r18, r20
+ 746:	35 1f       	adc	r19, r21
+ 748:	88 9e       	mul	r8, r24
+ 74a:	f0 01       	movw	r30, r0
+ 74c:	89 9e       	mul	r8, r25
+ 74e:	f0 0d       	add	r31, r0
+ 750:	11 24       	eor	r1, r1
+ 752:	2e 0f       	add	r18, r30
+ 754:	3f 1f       	adc	r19, r31
+ 756:	f9 01       	movw	r30, r18
+ 758:	e3 5c       	subi	r30, 0xC3	; 195
+ 75a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 75c:	81 81       	ldd	r24, Z+1	; 0x01
+ 75e:	92 81       	ldd	r25, Z+2	; 0x02
+ 760:	0e 94 a8 05 	call	0xb50	; 0xb50 <stepper_move_disp>
+					if (current_command != max_command) {
+						if (drinks[current_receipe][current_command].type == COMMAND_MOVE) {
+							STATE = STATE_MOVING_GLASS;
+							stepper_move_glass(drinks[current_receipe][current_command].amount);
+						} else if (drinks[current_receipe][current_command].type == COMMAND_DISPENSE) {
+							STATE = STATE_POURING;
+ 764:	c2 2d       	mov	r28, r2
+ 766:	d3 2d       	mov	r29, r3
+ 768:	0f c0       	rjmp	.+30     	; 0x788 <main+0x1e0>
+							stepper_move_disp(drinks[current_receipe][current_command].amount);
+						} else if (drinks[current_receipe][current_command].type == COMMAND_WAIT) {
+ 76a:	42 30       	cpi	r20, 0x02	; 2
+ 76c:	69 f4       	brne	.+26     	; 0x788 <main+0x1e0>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 76e:	9f ef       	ldi	r25, 0xFF	; 255
+ 770:	27 ea       	ldi	r18, 0xA7	; 167
+ 772:	81 e6       	ldi	r24, 0x61	; 97
+ 774:	91 50       	subi	r25, 0x01	; 1
+ 776:	20 40       	sbci	r18, 0x00	; 0
+ 778:	80 40       	sbci	r24, 0x00	; 0
+ 77a:	e1 f7       	brne	.-8      	; 0x774 <main+0x1cc>
+ 77c:	00 c0       	rjmp	.+0      	; 0x77e <main+0x1d6>
+ 77e:	00 00       	nop
+							STATE = STATE_PAUSE;
+ 780:	94 e0       	ldi	r25, 0x04	; 4
+ 782:	c9 2f       	mov	r28, r25
+ 784:	20 e0       	ldi	r18, 0x00	; 0
+ 786:	d2 2f       	mov	r29, r18
+							_delay_ms(2000);
+						}
+						current_command ++;
+ 788:	e3 94       	inc	r14
+ 78a:	4f cf       	rjmp	.-354    	; 0x62a <main+0x82>
+					} else {
+						current_receipe = 0;
+ 78c:	a0 92 3b 01 	sts	0x013B, r10	; 0x80013b <current_receipe>
+ 790:	b0 92 3c 01 	sts	0x013C, r11	; 0x80013c <current_receipe+0x1>
+ 794:	9e 2c       	mov	r9, r14
+ 796:	49 cf       	rjmp	.-366    	; 0x62a <main+0x82>
+					}
+				}
 			}
 		} else if (STATE == STATE_HOMING) {
- 186:	c1 30       	cpi	r28, 0x01	; 1
- 188:	d1 05       	cpc	r29, r1
- 18a:	29 f7       	brne	.-54     	; 0x156 <main+0x30>
+ 798:	c1 30       	cpi	r28, 0x01	; 1
+ 79a:	d1 05       	cpc	r29, r1
+ 79c:	51 f4       	brne	.+20     	; 0x7b2 <main+0x20a>
+			PORTD |= (1 << PD7);
+ 79e:	5f 9a       	sbi	0x0b, 7	; 11
 			if (!is_moving_glass()) {
- 18c:	0e 94 67 01 	call	0x2ce	; 0x2ce <is_moving_glass>
- 190:	81 11       	cpse	r24, r1
- 192:	e1 cf       	rjmp	.-62     	; 0x156 <main+0x30>
+ 7a0:	0e 94 7d 05 	call	0xafa	; 0xafa <is_moving_glass>
+ 7a4:	81 11       	cpse	r24, r1
+ 7a6:	41 cf       	rjmp	.-382    	; 0x62a <main+0x82>
 				known_home_glass = 1;
- 194:	0c 2d       	mov	r16, r12
- 196:	1d 2d       	mov	r17, r13
+ 7a8:	c6 2c       	mov	r12, r6
+ 7aa:	d7 2c       	mov	r13, r7
 				STATE = STATE_WAITING;
- 198:	ce 2d       	mov	r28, r14
- 19a:	df 2d       	mov	r29, r15
- 19c:	dc cf       	rjmp	.-72     	; 0x156 <main+0x30>
+ 7ac:	ca 2d       	mov	r28, r10
+ 7ae:	db 2d       	mov	r29, r11
+ 7b0:	3c cf       	rjmp	.-392    	; 0x62a <main+0x82>
+			}
+		} else if (STATE == STATE_MOVING_GLASS) {
+ 7b2:	c2 30       	cpi	r28, 0x02	; 2
+ 7b4:	d1 05       	cpc	r29, r1
+ 7b6:	39 f4       	brne	.+14     	; 0x7c6 <main+0x21e>
+			if (!is_moving_glass()) {
+ 7b8:	0e 94 7d 05 	call	0xafa	; 0xafa <is_moving_glass>
+ 7bc:	81 11       	cpse	r24, r1
+ 7be:	35 cf       	rjmp	.-406    	; 0x62a <main+0x82>
+				STATE = STATE_WAITING;
+ 7c0:	ca 2d       	mov	r28, r10
+ 7c2:	db 2d       	mov	r29, r11
+ 7c4:	32 cf       	rjmp	.-412    	; 0x62a <main+0x82>
+			}
+		} else if (STATE == STATE_POURING) {
+ 7c6:	c3 30       	cpi	r28, 0x03	; 3
+ 7c8:	d1 05       	cpc	r29, r1
+ 7ca:	c1 f4       	brne	.+48     	; 0x7fc <main+0x254>
+			if (!is_moving_disp()) {
+ 7cc:	0e 94 95 05 	call	0xb2a	; 0xb2a <is_moving_disp>
+ 7d0:	81 11       	cpse	r24, r1
+ 7d2:	2b cf       	rjmp	.-426    	; 0x62a <main+0x82>
+				if (get_position_disp() > 0) {
+ 7d4:	0e 94 a3 05 	call	0xb46	; 0xb46 <get_position_disp>
+ 7d8:	18 16       	cp	r1, r24
+ 7da:	19 06       	cpc	r1, r25
+ 7dc:	0c f0       	brlt	.+2      	; 0x7e0 <main+0x238>
+ 7de:	23 cf       	rjmp	.-442    	; 0x626 <main+0x7e>
+ 7e0:	9f ef       	ldi	r25, 0xFF	; 255
+ 7e2:	21 e1       	ldi	r18, 0x11	; 17
+ 7e4:	8a e7       	ldi	r24, 0x7A	; 122
+ 7e6:	91 50       	subi	r25, 0x01	; 1
+ 7e8:	20 40       	sbci	r18, 0x00	; 0
+ 7ea:	80 40       	sbci	r24, 0x00	; 0
+ 7ec:	e1 f7       	brne	.-8      	; 0x7e6 <main+0x23e>
+ 7ee:	00 c0       	rjmp	.+0      	; 0x7f0 <main+0x248>
+ 7f0:	00 00       	nop
+					_delay_ms(2500);
+					stepper_move_disp(0);
+ 7f2:	8a 2d       	mov	r24, r10
+ 7f4:	9b 2d       	mov	r25, r11
+ 7f6:	0e 94 a8 05 	call	0xb50	; 0xb50 <stepper_move_disp>
+ 7fa:	17 cf       	rjmp	.-466    	; 0x62a <main+0x82>
+				} else {
+					STATE = STATE_WAITING;	
+				}
+			}
+		} else if( STATE == STATE_PAUSE) {
+ 7fc:	c4 30       	cpi	r28, 0x04	; 4
+ 7fe:	d1 05       	cpc	r29, r1
+ 800:	09 f0       	breq	.+2      	; 0x804 <main+0x25c>
+ 802:	13 cf       	rjmp	.-474    	; 0x62a <main+0x82>
+			STATE = STATE_WAITING;
+ 804:	ca 2d       	mov	r28, r10
+ 806:	db 2d       	mov	r29, r11
+ 808:	10 cf       	rjmp	.-480    	; 0x62a <main+0x82>
+			PORTD &= ~0b10000000;
+					if (p.r > 0 && p.b == 0) {
+					p.r--;
+					p.g++;
+					}
+					if (p.g > 0 && p.r == 0) {
+ 80a:	01 11       	cpse	r16, r1
+ 80c:	1d cf       	rjmp	.-454    	; 0x648 <main+0xa0>
+ 80e:	03 c0       	rjmp	.+6      	; 0x816 <main+0x26e>
+					p.g--;
+					p.b++;
+					}
+					if (p.b > 0 && p.g == 0) {
+ 810:	f1 10       	cpse	r15, r1
+ 812:	21 cf       	rjmp	.-446    	; 0x656 <main+0xae>
+ 814:	23 cf       	rjmp	.-442    	; 0x65c <main+0xb4>
+ 816:	f1 10       	cpse	r15, r1
+ 818:	1e cf       	rjmp	.-452    	; 0x656 <main+0xae>
+ 81a:	20 cf       	rjmp	.-448    	; 0x65c <main+0xb4>
 
-0000019e <__vector_16>:
-volatile int current_position_glass = 0;
-volatile int target_position_glass = 0;
+0000081c <__vector_7>:
+#include "OrderReader.h"
 
-// The code for the motor that moves the glass around.
+volatile int is_data = 0;
+volatile int data = 0;
 
-ISR(TIMER0_COMPA_vect) {
- 19e:	1f 92       	push	r1
- 1a0:	0f 92       	push	r0
- 1a2:	0f b6       	in	r0, 0x3f	; 63
- 1a4:	0f 92       	push	r0
- 1a6:	11 24       	eor	r1, r1
- 1a8:	2f 93       	push	r18
- 1aa:	3f 93       	push	r19
- 1ac:	8f 93       	push	r24
- 1ae:	9f 93       	push	r25
-	if (current_position_glass < target_position_glass) {
- 1b0:	20 91 04 01 	lds	r18, 0x0104	; 0x800104 <current_position_glass>
- 1b4:	30 91 05 01 	lds	r19, 0x0105	; 0x800105 <current_position_glass+0x1>
- 1b8:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
- 1bc:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
- 1c0:	28 17       	cp	r18, r24
- 1c2:	39 07       	cpc	r19, r25
- 1c4:	7c f4       	brge	.+30     	; 0x1e4 <__vector_16+0x46>
-		STEPPER_GLASS_PORT ^= (1 << STEPPER_GLASS_STEP_PIN);
- 1c6:	9b b1       	in	r25, 0x0b	; 11
- 1c8:	80 e1       	ldi	r24, 0x10	; 16
- 1ca:	89 27       	eor	r24, r25
- 1cc:	8b b9       	out	0x0b, r24	; 11
-		STEPPER_GLASS_PORT |= (1 << STEPPER_GLASS_DIRECTION_PIN);
- 1ce:	5b 9a       	sbi	0x0b, 3	; 11
-		current_position_glass += 1;
- 1d0:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <current_position_glass>
- 1d4:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <current_position_glass+0x1>
- 1d8:	01 96       	adiw	r24, 0x01	; 1
- 1da:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <current_position_glass+0x1>
- 1de:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <current_position_glass>
- 1e2:	19 c0       	rjmp	.+50     	; 0x216 <__vector_16+0x78>
-	} else if (current_position_glass > target_position_glass) {
- 1e4:	20 91 04 01 	lds	r18, 0x0104	; 0x800104 <current_position_glass>
- 1e8:	30 91 05 01 	lds	r19, 0x0105	; 0x800105 <current_position_glass+0x1>
- 1ec:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
- 1f0:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <__data_end+0x1>
- 1f4:	82 17       	cp	r24, r18
- 1f6:	93 07       	cpc	r25, r19
- 1f8:	74 f4       	brge	.+28     	; 0x216 <__vector_16+0x78>
-		STEPPER_GLASS_PORT ^= (1 << STEPPER_GLASS_STEP_PIN);
- 1fa:	9b b1       	in	r25, 0x0b	; 11
- 1fc:	80 e1       	ldi	r24, 0x10	; 16
- 1fe:	89 27       	eor	r24, r25
- 200:	8b b9       	out	0x0b, r24	; 11
-		STEPPER_GLASS_PORT &= ~(1 << STEPPER_GLASS_DIRECTION_PIN);
- 202:	5b 98       	cbi	0x0b, 3	; 11
-			current_position_glass -= 1;
- 204:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <current_position_glass>
- 208:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <current_position_glass+0x1>
- 20c:	01 97       	sbiw	r24, 0x01	; 1
- 20e:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <current_position_glass+0x1>
- 212:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <current_position_glass>
+ISR(PCINT3_vect) {
+ 81c:	1f 92       	push	r1
+ 81e:	0f 92       	push	r0
+ 820:	0f b6       	in	r0, 0x3f	; 63
+ 822:	0f 92       	push	r0
+ 824:	11 24       	eor	r1, r1
+ 826:	2f 93       	push	r18
+ 828:	3f 93       	push	r19
+ 82a:	4f 93       	push	r20
+ 82c:	5f 93       	push	r21
+ 82e:	8f 93       	push	r24
+ 830:	9f 93       	push	r25
+	is_data = 1;
+ 832:	21 e0       	ldi	r18, 0x01	; 1
+ 834:	30 e0       	ldi	r19, 0x00	; 0
+ 836:	30 93 29 01 	sts	0x0129, r19	; 0x800129 <is_data+0x1>
+ 83a:	20 93 28 01 	sts	0x0128, r18	; 0x800128 <is_data>
+	data = ((ORDER_PIN & (1 << ORDER_BIT_1)) != 0) + ((ORDER_PIN & (1 << ORDER_BIT_2)) != 0) * 2 + ((ORDER_PIN & (1 << ORDER_BIT_3)) != 0) * 4 + ((ORDER_PIN & (1 << ORDER_BIT_4))  != 0) * 8;
+ 83e:	59 b1       	in	r21, 0x09	; 9
+ 840:	49 b1       	in	r20, 0x09	; 9
+ 842:	39 b1       	in	r19, 0x09	; 9
+ 844:	29 b1       	in	r18, 0x09	; 9
+ 846:	85 2f       	mov	r24, r21
+ 848:	81 70       	andi	r24, 0x01	; 1
+ 84a:	90 e0       	ldi	r25, 0x00	; 0
+ 84c:	42 70       	andi	r20, 0x02	; 2
+ 84e:	84 0f       	add	r24, r20
+ 850:	91 1d       	adc	r25, r1
+ 852:	34 70       	andi	r19, 0x04	; 4
+ 854:	83 0f       	add	r24, r19
+ 856:	91 1d       	adc	r25, r1
+ 858:	28 70       	andi	r18, 0x08	; 8
+ 85a:	82 0f       	add	r24, r18
+ 85c:	91 1d       	adc	r25, r1
+ 85e:	90 93 27 01 	sts	0x0127, r25	; 0x800127 <__data_end+0x1>
+ 862:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <__data_end>
+	PORTD ^= (1 << PD7);
+ 866:	8b b1       	in	r24, 0x0b	; 11
+ 868:	80 58       	subi	r24, 0x80	; 128
+ 86a:	8b b9       	out	0x0b, r24	; 11
+}
+ 86c:	9f 91       	pop	r25
+ 86e:	8f 91       	pop	r24
+ 870:	5f 91       	pop	r21
+ 872:	4f 91       	pop	r20
+ 874:	3f 91       	pop	r19
+ 876:	2f 91       	pop	r18
+ 878:	0f 90       	pop	r0
+ 87a:	0f be       	out	0x3f, r0	; 63
+ 87c:	0f 90       	pop	r0
+ 87e:	1f 90       	pop	r1
+ 880:	18 95       	reti
+
+00000882 <init_orderer>:
+
+void init_orderer() {
+	ORDER_DDR &= ~((1 << ORDER_BIT_CLK) | (1 << ORDER_BIT_1) | (1 << ORDER_BIT_2) | (1 << ORDER_BIT_3) | (1 << ORDER_BIT_4));
+ 882:	8a b1       	in	r24, 0x0a	; 10
+ 884:	80 7e       	andi	r24, 0xE0	; 224
+ 886:	8a b9       	out	0x0a, r24	; 10
+	ORDER_PORT |= (1 << ORDER_BIT_CLK) | (1 << ORDER_BIT_1) | (1 << ORDER_BIT_2) | (1 << ORDER_BIT_3) | (1 << ORDER_BIT_4);
+ 888:	8b b1       	in	r24, 0x0b	; 11
+ 88a:	8f 61       	ori	r24, 0x1F	; 31
+ 88c:	8b b9       	out	0x0b, r24	; 11
+	
+	PCICR |= (1 << PCIE3);
+ 88e:	e8 e6       	ldi	r30, 0x68	; 104
+ 890:	f0 e0       	ldi	r31, 0x00	; 0
+ 892:	80 81       	ld	r24, Z
+ 894:	88 60       	ori	r24, 0x08	; 8
+ 896:	80 83       	st	Z, r24
+	PCMSK3 |= (1 << PCINT28);
+ 898:	e3 e7       	ldi	r30, 0x73	; 115
+ 89a:	f0 e0       	ldi	r31, 0x00	; 0
+ 89c:	80 81       	ld	r24, Z
+ 89e:	80 61       	ori	r24, 0x10	; 16
+ 8a0:	80 83       	st	Z, r24
+ 8a2:	08 95       	ret
+
+000008a4 <get_orderer_data>:
+}
+
+uint8_t get_orderer_data() {
+	if (is_data == 0) {
+ 8a4:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <is_data>
+ 8a8:	90 91 29 01 	lds	r25, 0x0129	; 0x800129 <is_data+0x1>
+ 8ac:	89 2b       	or	r24, r25
+ 8ae:	49 f0       	breq	.+18     	; 0x8c2 <get_orderer_data+0x1e>
+		return 0;
+	} else {
+		is_data = 0;
+ 8b0:	10 92 29 01 	sts	0x0129, r1	; 0x800129 <is_data+0x1>
+ 8b4:	10 92 28 01 	sts	0x0128, r1	; 0x800128 <is_data>
+		return data;
+ 8b8:	80 91 26 01 	lds	r24, 0x0126	; 0x800126 <__data_end>
+ 8bc:	90 91 27 01 	lds	r25, 0x0127	; 0x800127 <__data_end+0x1>
+ 8c0:	08 95       	ret
+	PCMSK3 |= (1 << PCINT28);
+}
+
+uint8_t get_orderer_data() {
+	if (is_data == 0) {
+		return 0;
+ 8c2:	80 e0       	ldi	r24, 0x00	; 0
+	} else {
+		is_data = 0;
+		return data;
 	}
 }
- 216:	9f 91       	pop	r25
- 218:	8f 91       	pop	r24
- 21a:	3f 91       	pop	r19
- 21c:	2f 91       	pop	r18
- 21e:	0f 90       	pop	r0
- 220:	0f be       	out	0x3f, r0	; 63
- 222:	0f 90       	pop	r0
- 224:	1f 90       	pop	r1
- 226:	18 95       	reti
+ 8c4:	08 95       	ret
 
-00000228 <__vector_5>:
-
-//
-ISR (PCINT1_vect)
-{
- 228:	1f 92       	push	r1
- 22a:	0f 92       	push	r0
- 22c:	0f b6       	in	r0, 0x3f	; 63
- 22e:	0f 92       	push	r0
- 230:	11 24       	eor	r1, r1
- 232:	8f 93       	push	r24
-	if ((PINB & (1 << PB3)) == 0) { // HOMNG PAHAR
- 234:	1b 99       	sbic	0x03, 3	; 3
- 236:	08 c0       	rjmp	.+16     	; 0x248 <__vector_5+0x20>
-		current_position_glass = 0;
- 238:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <current_position_glass+0x1>
- 23c:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <current_position_glass>
-		PORTD ^= 1 << PD7;	
- 240:	8b b1       	in	r24, 0x0b	; 11
- 242:	80 58       	subi	r24, 0x80	; 128
- 244:	8b b9       	out	0x0b, r24	; 11
- 246:	05 c0       	rjmp	.+10     	; 0x252 <__vector_5+0x2a>
-	} else if ((PINB & (1 << PB4)) == 0) {
- 248:	1c 99       	sbic	0x03, 4	; 3
- 24a:	03 c0       	rjmp	.+6      	; 0x252 <__vector_5+0x2a>
-		PORTD ^= 1 << PD7;
- 24c:	8b b1       	in	r24, 0x0b	; 11
- 24e:	80 58       	subi	r24, 0x80	; 128
- 250:	8b b9       	out	0x0b, r24	; 11
-	}
-}
- 252:	8f 91       	pop	r24
- 254:	0f 90       	pop	r0
- 256:	0f be       	out	0x3f, r0	; 63
- 258:	0f 90       	pop	r0
- 25a:	1f 90       	pop	r1
- 25c:	18 95       	reti
-
-0000025e <set_speed_glass>:
-	
-	sei();
+000008c6 <__vector_16>:
 }
 
-void set_speed_glass(uint8_t stepsPerSecond) {
-	steps_per_second_glass = stepsPerSecond;
- 25e:	90 e0       	ldi	r25, 0x00	; 0
- 260:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__data_start+0x1>
- 264:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
-	OCR0A = COUNT_TO;
- 268:	60 91 00 01 	lds	r22, 0x0100	; 0x800100 <__data_start>
- 26c:	70 91 01 01 	lds	r23, 0x0101	; 0x800101 <__data_start+0x1>
- 270:	89 e0       	ldi	r24, 0x09	; 9
- 272:	9d e3       	ldi	r25, 0x3D	; 61
- 274:	0e 94 7f 01 	call	0x2fe	; 0x2fe <__divmodhi4>
- 278:	61 50       	subi	r22, 0x01	; 1
- 27a:	67 bd       	out	0x27, r22	; 39
- 27c:	08 95       	ret
 
-0000027e <setup_stepper_glass>:
-		PORTD ^= 1 << PD7;
-	}
+
+void set_speed_disp(uint8_t ms_for_a_step) {
+	ticks_for_step_disp = ms_for_a_step;
+ 8c6:	1f 92       	push	r1
+ 8c8:	0f 92       	push	r0
+ 8ca:	0f b6       	in	r0, 0x3f	; 63
+ 8cc:	0f 92       	push	r0
+ 8ce:	11 24       	eor	r1, r1
+ 8d0:	2f 93       	push	r18
+ 8d2:	3f 93       	push	r19
+ 8d4:	8f 93       	push	r24
+ 8d6:	9f 93       	push	r25
+ 8d8:	80 91 34 01 	lds	r24, 0x0134	; 0x800134 <ticks_glass>
+ 8dc:	90 91 35 01 	lds	r25, 0x0135	; 0x800135 <ticks_glass+0x1>
+ 8e0:	01 96       	adiw	r24, 0x01	; 1
+ 8e2:	90 93 35 01 	sts	0x0135, r25	; 0x800135 <ticks_glass+0x1>
+ 8e6:	80 93 34 01 	sts	0x0134, r24	; 0x800134 <ticks_glass>
+ 8ea:	20 91 34 01 	lds	r18, 0x0134	; 0x800134 <ticks_glass>
+ 8ee:	30 91 35 01 	lds	r19, 0x0135	; 0x800135 <ticks_glass+0x1>
+ 8f2:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <ticks_for_step_glass>
+ 8f6:	90 91 25 01 	lds	r25, 0x0125	; 0x800125 <ticks_for_step_glass+0x1>
+ 8fa:	28 17       	cp	r18, r24
+ 8fc:	39 07       	cpc	r19, r25
+ 8fe:	21 f4       	brne	.+8      	; 0x908 <__stack+0x9>
+ 900:	10 92 35 01 	sts	0x0135, r1	; 0x800135 <ticks_glass+0x1>
+ 904:	10 92 34 01 	sts	0x0134, r1	; 0x800134 <ticks_glass>
+ 908:	80 91 34 01 	lds	r24, 0x0134	; 0x800134 <ticks_glass>
+ 90c:	90 91 35 01 	lds	r25, 0x0135	; 0x800135 <ticks_glass+0x1>
+ 910:	89 2b       	or	r24, r25
+ 912:	b9 f5       	brne	.+110    	; 0x982 <__stack+0x83>
+ 914:	20 91 30 01 	lds	r18, 0x0130	; 0x800130 <current_position_glass>
+ 918:	30 91 31 01 	lds	r19, 0x0131	; 0x800131 <current_position_glass+0x1>
+ 91c:	80 91 2e 01 	lds	r24, 0x012E	; 0x80012e <target_position_glass>
+ 920:	90 91 2f 01 	lds	r25, 0x012F	; 0x80012f <target_position_glass+0x1>
+ 924:	28 17       	cp	r18, r24
+ 926:	39 07       	cpc	r19, r25
+ 928:	84 f4       	brge	.+32     	; 0x94a <__stack+0x4b>
+ 92a:	46 98       	cbi	0x08, 6	; 8
+ 92c:	98 b1       	in	r25, 0x08	; 8
+ 92e:	80 e2       	ldi	r24, 0x20	; 32
+ 930:	89 27       	eor	r24, r25
+ 932:	88 b9       	out	0x08, r24	; 8
+ 934:	44 9a       	sbi	0x08, 4	; 8
+ 936:	80 91 30 01 	lds	r24, 0x0130	; 0x800130 <current_position_glass>
+ 93a:	90 91 31 01 	lds	r25, 0x0131	; 0x800131 <current_position_glass+0x1>
+ 93e:	01 96       	adiw	r24, 0x01	; 1
+ 940:	90 93 31 01 	sts	0x0131, r25	; 0x800131 <current_position_glass+0x1>
+ 944:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <current_position_glass>
+ 948:	1c c0       	rjmp	.+56     	; 0x982 <__stack+0x83>
+ 94a:	20 91 30 01 	lds	r18, 0x0130	; 0x800130 <current_position_glass>
+ 94e:	30 91 31 01 	lds	r19, 0x0131	; 0x800131 <current_position_glass+0x1>
+ 952:	80 91 2e 01 	lds	r24, 0x012E	; 0x80012e <target_position_glass>
+ 956:	90 91 2f 01 	lds	r25, 0x012F	; 0x80012f <target_position_glass+0x1>
+ 95a:	82 17       	cp	r24, r18
+ 95c:	93 07       	cpc	r25, r19
+ 95e:	84 f4       	brge	.+32     	; 0x980 <__stack+0x81>
+ 960:	46 98       	cbi	0x08, 6	; 8
+ 962:	98 b1       	in	r25, 0x08	; 8
+ 964:	80 e2       	ldi	r24, 0x20	; 32
+ 966:	89 27       	eor	r24, r25
+ 968:	88 b9       	out	0x08, r24	; 8
+ 96a:	44 98       	cbi	0x08, 4	; 8
+ 96c:	80 91 30 01 	lds	r24, 0x0130	; 0x800130 <current_position_glass>
+ 970:	90 91 31 01 	lds	r25, 0x0131	; 0x800131 <current_position_glass+0x1>
+ 974:	01 97       	sbiw	r24, 0x01	; 1
+ 976:	90 93 31 01 	sts	0x0131, r25	; 0x800131 <current_position_glass+0x1>
+ 97a:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <current_position_glass>
+ 97e:	01 c0       	rjmp	.+2      	; 0x982 <__stack+0x83>
+ 980:	46 9a       	sbi	0x08, 6	; 8
+ 982:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <ticks_disp>
+ 986:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <ticks_disp+0x1>
+ 98a:	01 96       	adiw	r24, 0x01	; 1
+ 98c:	90 93 33 01 	sts	0x0133, r25	; 0x800133 <ticks_disp+0x1>
+ 990:	80 93 32 01 	sts	0x0132, r24	; 0x800132 <ticks_disp>
+ 994:	20 91 32 01 	lds	r18, 0x0132	; 0x800132 <ticks_disp>
+ 998:	30 91 33 01 	lds	r19, 0x0133	; 0x800133 <ticks_disp+0x1>
+ 99c:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <ticks_for_step_disp>
+ 9a0:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <ticks_for_step_disp+0x1>
+ 9a4:	28 17       	cp	r18, r24
+ 9a6:	39 07       	cpc	r19, r25
+ 9a8:	21 f4       	brne	.+8      	; 0x9b2 <__stack+0xb3>
+ 9aa:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <ticks_disp+0x1>
+ 9ae:	10 92 32 01 	sts	0x0132, r1	; 0x800132 <ticks_disp>
+ 9b2:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <ticks_disp>
+ 9b6:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <ticks_disp+0x1>
+ 9ba:	89 2b       	or	r24, r25
+ 9bc:	b9 f5       	brne	.+110    	; 0xa2c <__stack+0x12d>
+ 9be:	20 91 2c 01 	lds	r18, 0x012C	; 0x80012c <current_position_disp>
+ 9c2:	30 91 2d 01 	lds	r19, 0x012D	; 0x80012d <current_position_disp+0x1>
+ 9c6:	80 91 2a 01 	lds	r24, 0x012A	; 0x80012a <target_position_disp>
+ 9ca:	90 91 2b 01 	lds	r25, 0x012B	; 0x80012b <target_position_disp+0x1>
+ 9ce:	28 17       	cp	r18, r24
+ 9d0:	39 07       	cpc	r19, r25
+ 9d2:	84 f4       	brge	.+32     	; 0x9f4 <__stack+0xf5>
+ 9d4:	2d 98       	cbi	0x05, 5	; 5
+ 9d6:	95 b1       	in	r25, 0x05	; 5
+ 9d8:	80 e4       	ldi	r24, 0x40	; 64
+ 9da:	89 27       	eor	r24, r25
+ 9dc:	85 b9       	out	0x05, r24	; 5
+ 9de:	2f 9a       	sbi	0x05, 7	; 5
+ 9e0:	80 91 2c 01 	lds	r24, 0x012C	; 0x80012c <current_position_disp>
+ 9e4:	90 91 2d 01 	lds	r25, 0x012D	; 0x80012d <current_position_disp+0x1>
+ 9e8:	01 96       	adiw	r24, 0x01	; 1
+ 9ea:	90 93 2d 01 	sts	0x012D, r25	; 0x80012d <current_position_disp+0x1>
+ 9ee:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <current_position_disp>
+ 9f2:	1c c0       	rjmp	.+56     	; 0xa2c <__stack+0x12d>
+ 9f4:	20 91 2c 01 	lds	r18, 0x012C	; 0x80012c <current_position_disp>
+ 9f8:	30 91 2d 01 	lds	r19, 0x012D	; 0x80012d <current_position_disp+0x1>
+ 9fc:	80 91 2a 01 	lds	r24, 0x012A	; 0x80012a <target_position_disp>
+ a00:	90 91 2b 01 	lds	r25, 0x012B	; 0x80012b <target_position_disp+0x1>
+ a04:	82 17       	cp	r24, r18
+ a06:	93 07       	cpc	r25, r19
+ a08:	84 f4       	brge	.+32     	; 0xa2a <__stack+0x12b>
+ a0a:	2d 98       	cbi	0x05, 5	; 5
+ a0c:	95 b1       	in	r25, 0x05	; 5
+ a0e:	80 e4       	ldi	r24, 0x40	; 64
+ a10:	89 27       	eor	r24, r25
+ a12:	85 b9       	out	0x05, r24	; 5
+ a14:	2f 98       	cbi	0x05, 7	; 5
+ a16:	80 91 2c 01 	lds	r24, 0x012C	; 0x80012c <current_position_disp>
+ a1a:	90 91 2d 01 	lds	r25, 0x012D	; 0x80012d <current_position_disp+0x1>
+ a1e:	01 97       	sbiw	r24, 0x01	; 1
+ a20:	90 93 2d 01 	sts	0x012D, r25	; 0x80012d <current_position_disp+0x1>
+ a24:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <current_position_disp>
+ a28:	01 c0       	rjmp	.+2      	; 0xa2c <__stack+0x12d>
+ a2a:	2d 9a       	sbi	0x05, 5	; 5
+ a2c:	9f 91       	pop	r25
+ a2e:	8f 91       	pop	r24
+ a30:	3f 91       	pop	r19
+ a32:	2f 91       	pop	r18
+ a34:	0f 90       	pop	r0
+ a36:	0f be       	out	0x3f, r0	; 63
+ a38:	0f 90       	pop	r0
+ a3a:	1f 90       	pop	r1
+ a3c:	18 95       	reti
+
+00000a3e <__vector_5>:
+ a3e:	1f 92       	push	r1
+ a40:	0f 92       	push	r0
+ a42:	0f b6       	in	r0, 0x3f	; 63
+ a44:	0f 92       	push	r0
+ a46:	11 24       	eor	r1, r1
+ a48:	1b 99       	sbic	0x03, 3	; 3
+ a4a:	04 c0       	rjmp	.+8      	; 0xa54 <__vector_5+0x16>
+ a4c:	10 92 31 01 	sts	0x0131, r1	; 0x800131 <current_position_glass+0x1>
+ a50:	10 92 30 01 	sts	0x0130, r1	; 0x800130 <current_position_glass>
+ a54:	0f 90       	pop	r0
+ a56:	0f be       	out	0x3f, r0	; 63
+ a58:	0f 90       	pop	r0
+ a5a:	1f 90       	pop	r1
+ a5c:	18 95       	reti
+
+00000a5e <__vector_6>:
+ a5e:	1f 92       	push	r1
+ a60:	0f 92       	push	r0
+ a62:	0f b6       	in	r0, 0x3f	; 63
+ a64:	0f 92       	push	r0
+ a66:	11 24       	eor	r1, r1
+ a68:	8f 93       	push	r24
+ a6a:	37 99       	sbic	0x06, 7	; 6
+ a6c:	07 c0       	rjmp	.+14     	; 0xa7c <__vector_6+0x1e>
+ a6e:	10 92 2d 01 	sts	0x012D, r1	; 0x80012d <current_position_disp+0x1>
+ a72:	10 92 2c 01 	sts	0x012C, r1	; 0x80012c <current_position_disp>
+ a76:	8b b1       	in	r24, 0x0b	; 11
+ a78:	80 58       	subi	r24, 0x80	; 128
+ a7a:	8b b9       	out	0x0b, r24	; 11
+ a7c:	8f 91       	pop	r24
+ a7e:	0f 90       	pop	r0
+ a80:	0f be       	out	0x3f, r0	; 63
+ a82:	0f 90       	pop	r0
+ a84:	1f 90       	pop	r1
+ a86:	18 95       	reti
+
+00000a88 <setup_steppers>:
+ a88:	84 b5       	in	r24, 0x24	; 36
+ a8a:	82 60       	ori	r24, 0x02	; 2
+ a8c:	84 bd       	out	0x24, r24	; 36
+ a8e:	85 b5       	in	r24, 0x25	; 37
+ a90:	85 60       	ori	r24, 0x05	; 5
+ a92:	85 bd       	out	0x25, r24	; 37
+ a94:	83 e0       	ldi	r24, 0x03	; 3
+ a96:	87 bd       	out	0x27, r24	; 39
+ a98:	ee e6       	ldi	r30, 0x6E	; 110
+ a9a:	f0 e0       	ldi	r31, 0x00	; 0
+ a9c:	80 81       	ld	r24, Z
+ a9e:	82 60       	ori	r24, 0x02	; 2
+ aa0:	80 83       	st	Z, r24
+ aa2:	47 98       	cbi	0x08, 7	; 8
+ aa4:	2b 98       	cbi	0x05, 3	; 5
+ aa6:	3f 9a       	sbi	0x07, 7	; 7
+ aa8:	23 9a       	sbi	0x04, 3	; 4
+ aaa:	e8 e6       	ldi	r30, 0x68	; 104
+ aac:	f0 e0       	ldi	r31, 0x00	; 0
+ aae:	80 81       	ld	r24, Z
+ ab0:	86 60       	ori	r24, 0x06	; 6
+ ab2:	80 83       	st	Z, r24
+ ab4:	ed e6       	ldi	r30, 0x6D	; 109
+ ab6:	f0 e0       	ldi	r31, 0x00	; 0
+ ab8:	80 81       	ld	r24, Z
+ aba:	80 68       	ori	r24, 0x80	; 128
+ abc:	80 83       	st	Z, r24
+ abe:	ec e6       	ldi	r30, 0x6C	; 108
+ ac0:	f0 e0       	ldi	r31, 0x00	; 0
+ ac2:	80 81       	ld	r24, Z
+ ac4:	88 60       	ori	r24, 0x08	; 8
+ ac6:	80 83       	st	Z, r24
+ ac8:	78 94       	sei
+ aca:	08 95       	ret
+
+00000acc <setup_stepper_glass>:
+ acc:	99 27       	eor	r25, r25
+ ace:	90 93 25 01 	sts	0x0125, r25	; 0x800125 <ticks_for_step_glass+0x1>
+ ad2:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <ticks_for_step_glass>
+ ad6:	87 b1       	in	r24, 0x07	; 7
+ ad8:	80 67       	ori	r24, 0x70	; 112
+ ada:	87 b9       	out	0x07, r24	; 7
+ adc:	08 95       	ret
+
+00000ade <setup_stepper_disp>:
+ ade:	99 27       	eor	r25, r25
+ ae0:	90 93 23 01 	sts	0x0123, r25	; 0x800123 <ticks_for_step_disp+0x1>
+ ae4:	80 93 22 01 	sts	0x0122, r24	; 0x800122 <ticks_for_step_disp>
+ ae8:	84 b1       	in	r24, 0x04	; 4
+ aea:	80 6e       	ori	r24, 0xE0	; 224
+ aec:	84 b9       	out	0x04, r24	; 4
+ aee:	08 95       	ret
+
+00000af0 <set_position_glass>:
+ af0:	90 93 31 01 	sts	0x0131, r25	; 0x800131 <current_position_glass+0x1>
+ af4:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <current_position_glass>
+ af8:	08 95       	ret
+
+00000afa <is_moving_glass>:
+ afa:	40 91 30 01 	lds	r20, 0x0130	; 0x800130 <current_position_glass>
+ afe:	50 91 31 01 	lds	r21, 0x0131	; 0x800131 <current_position_glass+0x1>
+ b02:	20 91 2e 01 	lds	r18, 0x012E	; 0x80012e <target_position_glass>
+ b06:	30 91 2f 01 	lds	r19, 0x012F	; 0x80012f <target_position_glass+0x1>
+ b0a:	81 e0       	ldi	r24, 0x01	; 1
+ b0c:	42 17       	cp	r20, r18
+ b0e:	53 07       	cpc	r21, r19
+ b10:	09 f4       	brne	.+2      	; 0xb14 <is_moving_glass+0x1a>
+ b12:	80 e0       	ldi	r24, 0x00	; 0
+ b14:	08 95       	ret
+
+00000b16 <stepper_move_glass>:
+ b16:	90 93 2f 01 	sts	0x012F, r25	; 0x80012f <target_position_glass+0x1>
+ b1a:	80 93 2e 01 	sts	0x012E, r24	; 0x80012e <target_position_glass>
+ b1e:	08 95       	ret
+
+00000b20 <set_position_disp>:
 }
 
-void setup_stepper_glass(int stepsPerSecond) {
-	TCCR0A |= (1 << WGM01); // Set mode to CTC;
- 27e:	94 b5       	in	r25, 0x24	; 36
- 280:	92 60       	ori	r25, 0x02	; 2
- 282:	94 bd       	out	0x24, r25	; 36
-	TCCR0B |= (1 << CS00) | (1 << CS02); // prescaler 1024
- 284:	95 b5       	in	r25, 0x25	; 37
- 286:	95 60       	ori	r25, 0x05	; 5
- 288:	95 bd       	out	0x25, r25	; 37
-	TIMSK0 |= (1 << OCIE0A); // activate interrupt
- 28a:	ee e6       	ldi	r30, 0x6E	; 110
- 28c:	f0 e0       	ldi	r31, 0x00	; 0
- 28e:	90 81       	ld	r25, Z
- 290:	92 60       	ori	r25, 0x02	; 2
- 292:	90 83       	st	Z, r25
-	set_speed_glass(stepsPerSecond);
- 294:	0e 94 2f 01 	call	0x25e	; 0x25e <set_speed_glass>
-	STEPPER_GLASS_DDR |= (1 << STEPPER_GLASS_STEP_PIN) | (1 << STEPPER_GLASS_ENABLED_PIN) | (1 << STEPPER_GLASS_DIRECTION_PIN);
- 298:	8a b1       	in	r24, 0x0a	; 10
- 29a:	8c 61       	ori	r24, 0x1C	; 28
- 29c:	8a b9       	out	0x0a, r24	; 10
-	
-	// ACTIVARE ENDPOINT. MODIFICA AICI DACA SCHIMBI PINUL.
-	
-	PORTB &= ~(1 << PB4);
- 29e:	2c 98       	cbi	0x05, 4	; 5
-	PORTB &= ~(1 << PB3);
- 2a0:	2b 98       	cbi	0x05, 3	; 5
-	
-	DDRB |= 1 << PB4;
- 2a2:	24 9a       	sbi	0x04, 4	; 4
-	DDRB |= 1 << PB3;
- 2a4:	23 9a       	sbi	0x04, 3	; 4
-	
-	PCICR |= (1 << PCIE1);
- 2a6:	e8 e6       	ldi	r30, 0x68	; 104
- 2a8:	f0 e0       	ldi	r31, 0x00	; 0
- 2aa:	80 81       	ld	r24, Z
- 2ac:	82 60       	ori	r24, 0x02	; 2
- 2ae:	80 83       	st	Z, r24
-	
-	PCMSK1 |= (1 << PCINT12);
- 2b0:	ec e6       	ldi	r30, 0x6C	; 108
- 2b2:	f0 e0       	ldi	r31, 0x00	; 0
- 2b4:	80 81       	ld	r24, Z
- 2b6:	80 61       	ori	r24, 0x10	; 16
- 2b8:	80 83       	st	Z, r24
-	PCMSK1 |= (1 << PCINT11);
- 2ba:	80 81       	ld	r24, Z
- 2bc:	88 60       	ori	r24, 0x08	; 8
- 2be:	80 83       	st	Z, r24
-	
-	sei();
- 2c0:	78 94       	sei
- 2c2:	08 95       	ret
+void set_position_disp(int step) {
+	current_position_disp  = step;
+ b20:	90 93 2d 01 	sts	0x012D, r25	; 0x80012d <current_position_disp+0x1>
+ b24:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <current_position_disp>
+ b28:	08 95       	ret
 
-000002c4 <set_position_glass>:
-
-//volatile int remaining_move = 0;
-volatile int position;
-
-void set_position_glass(int step) {
-	current_position_glass  = step;
- 2c4:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <current_position_glass+0x1>
- 2c8:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <current_position_glass>
- 2cc:	08 95       	ret
-
-000002ce <is_moving_glass>:
+00000b2a <is_moving_disp>:
 }
- 
-uint8_t is_moving_glass() {
-	return current_position_glass != target_position_glass;	
- 2ce:	40 91 04 01 	lds	r20, 0x0104	; 0x800104 <current_position_glass>
- 2d2:	50 91 05 01 	lds	r21, 0x0105	; 0x800105 <current_position_glass+0x1>
- 2d6:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__data_end>
- 2da:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__data_end+0x1>
- 2de:	81 e0       	ldi	r24, 0x01	; 1
- 2e0:	42 17       	cp	r20, r18
- 2e2:	53 07       	cpc	r21, r19
- 2e4:	09 f4       	brne	.+2      	; 0x2e8 <is_moving_glass+0x1a>
- 2e6:	80 e0       	ldi	r24, 0x00	; 0
+
+uint8_t is_moving_disp() {
+	return current_position_disp != target_position_disp;
+ b2a:	40 91 2c 01 	lds	r20, 0x012C	; 0x80012c <current_position_disp>
+ b2e:	50 91 2d 01 	lds	r21, 0x012D	; 0x80012d <current_position_disp+0x1>
+ b32:	20 91 2a 01 	lds	r18, 0x012A	; 0x80012a <target_position_disp>
+ b36:	30 91 2b 01 	lds	r19, 0x012B	; 0x80012b <target_position_disp+0x1>
+ b3a:	81 e0       	ldi	r24, 0x01	; 1
+ b3c:	42 17       	cp	r20, r18
+ b3e:	53 07       	cpc	r21, r19
+ b40:	09 f4       	brne	.+2      	; 0xb44 <is_moving_disp+0x1a>
+ b42:	80 e0       	ldi	r24, 0x00	; 0
 }
- 2e8:	08 95       	ret
+ b44:	08 95       	ret
 
-000002ea <get_position_glass>:
+00000b46 <get_position_disp>:
 
-int get_position_glass() {
-	return current_position_glass;
- 2ea:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <current_position_glass>
- 2ee:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <current_position_glass+0x1>
+int get_position_disp() {
+	return current_position_disp;
+ b46:	80 91 2c 01 	lds	r24, 0x012C	; 0x80012c <current_position_disp>
+ b4a:	90 91 2d 01 	lds	r25, 0x012D	; 0x80012d <current_position_disp+0x1>
 }
- 2f2:	08 95       	ret
+ b4e:	08 95       	ret
 
-000002f4 <stepper_move_glass>:
+00000b50 <stepper_move_disp>:
 
-void stepper_move_glass(int step) {
-	target_position_glass = step;
- 2f4:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
- 2f8:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
- 2fc:	08 95       	ret
+void stepper_move_disp(int step) {
+	target_position_disp = step;
+ b50:	90 93 2b 01 	sts	0x012B, r25	; 0x80012b <target_position_disp+0x1>
+ b54:	80 93 2a 01 	sts	0x012A, r24	; 0x80012a <target_position_disp>
+ b58:	08 95       	ret
 
-000002fe <__divmodhi4>:
- 2fe:	97 fb       	bst	r25, 7
- 300:	07 2e       	mov	r0, r23
- 302:	16 f4       	brtc	.+4      	; 0x308 <__divmodhi4+0xa>
- 304:	00 94       	com	r0
- 306:	07 d0       	rcall	.+14     	; 0x316 <__divmodhi4_neg1>
- 308:	77 fd       	sbrc	r23, 7
- 30a:	09 d0       	rcall	.+18     	; 0x31e <__divmodhi4_neg2>
- 30c:	0e 94 93 01 	call	0x326	; 0x326 <__udivmodhi4>
- 310:	07 fc       	sbrc	r0, 7
- 312:	05 d0       	rcall	.+10     	; 0x31e <__divmodhi4_neg2>
- 314:	3e f4       	brtc	.+14     	; 0x324 <__divmodhi4_exit>
+00000b5a <_exit>:
+ b5a:	f8 94       	cli
 
-00000316 <__divmodhi4_neg1>:
- 316:	90 95       	com	r25
- 318:	81 95       	neg	r24
- 31a:	9f 4f       	sbci	r25, 0xFF	; 255
- 31c:	08 95       	ret
-
-0000031e <__divmodhi4_neg2>:
- 31e:	70 95       	com	r23
- 320:	61 95       	neg	r22
- 322:	7f 4f       	sbci	r23, 0xFF	; 255
-
-00000324 <__divmodhi4_exit>:
- 324:	08 95       	ret
-
-00000326 <__udivmodhi4>:
- 326:	aa 1b       	sub	r26, r26
- 328:	bb 1b       	sub	r27, r27
- 32a:	51 e1       	ldi	r21, 0x11	; 17
- 32c:	07 c0       	rjmp	.+14     	; 0x33c <__udivmodhi4_ep>
-
-0000032e <__udivmodhi4_loop>:
- 32e:	aa 1f       	adc	r26, r26
- 330:	bb 1f       	adc	r27, r27
- 332:	a6 17       	cp	r26, r22
- 334:	b7 07       	cpc	r27, r23
- 336:	10 f0       	brcs	.+4      	; 0x33c <__udivmodhi4_ep>
- 338:	a6 1b       	sub	r26, r22
- 33a:	b7 0b       	sbc	r27, r23
-
-0000033c <__udivmodhi4_ep>:
- 33c:	88 1f       	adc	r24, r24
- 33e:	99 1f       	adc	r25, r25
- 340:	5a 95       	dec	r21
- 342:	a9 f7       	brne	.-22     	; 0x32e <__udivmodhi4_loop>
- 344:	80 95       	com	r24
- 346:	90 95       	com	r25
- 348:	bc 01       	movw	r22, r24
- 34a:	cd 01       	movw	r24, r26
- 34c:	08 95       	ret
-
-0000034e <_exit>:
- 34e:	f8 94       	cli
-
-00000350 <__stop_program>:
- 350:	ff cf       	rjmp	.-2      	; 0x350 <__stop_program>
+00000b5c <__stop_program>:
+ b5c:	ff cf       	rjmp	.-2      	; 0xb5c <__stop_program>

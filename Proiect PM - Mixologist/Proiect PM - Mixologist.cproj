@@ -129,6 +129,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="OrderReader.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OrderReader.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Stepper.c">
       <SubType>compile</SubType>
     </Compile>

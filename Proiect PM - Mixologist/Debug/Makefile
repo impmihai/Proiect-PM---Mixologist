@@ -39,6 +39,7 @@ SUBDIRS :=
 C_SRCS +=  \
 ../AnalogWrite.c \
 ../main.c \
+../OrderReader.c \
 ../Stepper.c
 
 
@@ -51,21 +52,25 @@ ASM_SRCS +=
 OBJS +=  \
 AnalogWrite.o \
 main.o \
+OrderReader.o \
 Stepper.o
 
 OBJS_AS_ARGS +=  \
 AnalogWrite.o \
 main.o \
+OrderReader.o \
 Stepper.o
 
 C_DEPS +=  \
 AnalogWrite.d \
 main.d \
+OrderReader.d \
 Stepper.d
 
 C_DEPS_AS_ARGS +=  \
 AnalogWrite.d \
 main.d \
+OrderReader.d \
 Stepper.d
 
 OUTPUT_FILE_PATH +=Proiect\ PM\ -\ Mixologist.elf
@@ -90,6 +95,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)F:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./OrderReader.o: .././OrderReader.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)F:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"F:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega324pa -B "F:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega324pa" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

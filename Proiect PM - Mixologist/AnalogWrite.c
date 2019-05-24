@@ -4,9 +4,9 @@
  * Created: 4/23/2019 9:19:37 PM
  *  Author: mihai
  */ 
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <util/delay.h>
 #include "AnalogWrite.h"
 
 volatile uint8_t pinR_pwm;
@@ -15,31 +15,25 @@ volatile uint8_t pinB_pwm;
 volatile uint8_t pinMotor_pwm;
 volatile uint8_t count;
 
-//ISR(TIMER2_OVF_vect) {
-//PORTD &= 0x00;
-//}
-//
 ISR(TIMER2_COMPA_vect) {
 	count += 1;
 	if (count == 0) {
 		//PORTB &=
-		PORTD &= ~0b11110000;
+		//PORTD &= ~(1 << PD7);
+		PORTC &= ~((1 << PC0) | (1 << PC1) | (1 << PC2));
 	}
 	
 	if (count == pinR_pwm) {
-		PORTD |= 0b10000000;
+		//PORTD |= (1 << PD71);
+		PORTC |= (1 << PC0);
 	}
 	
 	if (count == pinG_pwm) {
-		PORTD |= 0b01000000;
+		PORTC |= (1 << PC1);
 	}
 	
 	if (count == pinB_pwm) {
-		PORTD |= 0b00100000;
-	}
-	
-	if (count == pinB_pwm) {
-		PORTD |= 0b00010000;
+		PORTC |= (1 << PC2);
 	}
 }
 
@@ -51,6 +45,9 @@ void initAnalogWrite() {
 	OCR2A = 0x7C;                      //sets TOP to 124 so the timer will overflow every 0.5 ms.
 	TIMSK2 |= (1<<OCIE2A);              //Output Compare Match A Interrupt Enable
 	sei();
+	
+	//PORTD |= (1 << PD7);
+	DDRC |= (1 << PC0) | (1 << PC1) | (1 << PC2);
 }
 
 void analogWrite(int r, int g, int b) {

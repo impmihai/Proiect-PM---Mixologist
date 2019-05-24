@@ -1,25 +1,22 @@
 Archive member included to satisfy reference by file (symbol)
 
-f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                              Stepper.o (__divmodhi4)
 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o (exit)
 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
-                              Stepper.o (__do_copy_data)
+                              main.o (__do_copy_data)
 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
                               AnalogWrite.o (__do_clear_bss)
-f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                              f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o) (__udivmodhi4)
 
 Allocating common symbols
 Common symbol       size              file
 
 pinR_pwm            0x1               AnalogWrite.o
-position            0x2               Stepper.o
 pinB_pwm            0x1               AnalogWrite.o
 pinG_pwm            0x1               AnalogWrite.o
 count               0x1               AnalogWrite.o
 pinMotor_pwm        0x1               AnalogWrite.o
+current_receipe     0x2               main.o
+drinks              0x630             main.o
 
 Discarded input sections
 
@@ -28,33 +25,23 @@ Discarded input sections
  .text          0x00000000        0x0 AnalogWrite.o
  .data          0x00000000        0x0 AnalogWrite.o
  .bss           0x00000000        0x0 AnalogWrite.o
- .text.initAnalogWrite
-                0x00000000       0x28 AnalogWrite.o
- .text.analogWrite
-                0x00000000       0x14 AnalogWrite.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
  .text.setup_timer1
                 0x00000000       0x2e main.o
+ .text          0x00000000        0x0 OrderReader.o
+ .data          0x00000000        0x0 OrderReader.o
+ .bss           0x00000000        0x0 OrderReader.o
  .text          0x00000000        0x0 Stepper.o
  .data          0x00000000        0x0 Stepper.o
  .bss           0x00000000        0x0 Stepper.o
- COMMON         0x00000000        0x2 Stepper.o
- .text          0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .data          0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .bss           0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.mul
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc   0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.prologue
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.builtins
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.fmul
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
- .text.libgcc.fixed
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.set_speed_glass
+                0x00000000        0xc Stepper.o
+ .text.get_position_glass
+                0x00000000        0xa Stepper.o
+ .text.set_speed_disp
+                0x00000000        0xc Stepper.o
  .text          0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -103,20 +90,6 @@ Discarded input sections
                 0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
                 0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text          0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .data          0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.mul
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc   0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.prologue
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.builtins
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.fmul
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc.fixed
-                0x00000000        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
 
 Memory Configuration
 
@@ -136,6 +109,7 @@ Address of section .data set to 0x800100
 LOAD F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
 LOAD AnalogWrite.o
 LOAD main.o
+LOAD OrderReader.o
 LOAD Stepper.o
 START GROUP
 LOAD f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
@@ -244,7 +218,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x352
+.text           0x00000000      0xb5e
  *(.vectors)
  .vectors       0x00000000       0x7c F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
                 0x00000000                __vector_default
@@ -309,7 +283,6 @@ END GROUP
                 0x000000b6                __vector_24
                 0x000000b6                __vector_12
                 0x000000b6                __bad_interrupt
-                0x000000b6                __vector_6
                 0x000000b6                __vector_3
                 0x000000b6                __vector_23
                 0x000000b6                __vector_30
@@ -318,7 +291,6 @@ END GROUP
                 0x000000b6                __vector_13
                 0x000000b6                __vector_17
                 0x000000b6                __vector_19
-                0x000000b6                __vector_7
                 0x000000b6                __vector_27
                 0x000000b6                __vector_4
                 0x000000b6                __vector_2
@@ -334,46 +306,72 @@ END GROUP
                 0x000000ba                . = ALIGN (0x2)
  *(.text.*)
  .text.__vector_9
-                0x000000ba       0x6c AnalogWrite.o
+                0x000000ba       0x5e AnalogWrite.o
                 0x000000ba                __vector_9
- .text.main     0x00000126       0x78 main.o
-                0x00000126                main
+ .text.initAnalogWrite
+                0x00000118       0x2e AnalogWrite.o
+                0x00000118                initAnalogWrite
+ .text.analogWrite
+                0x00000146       0x14 AnalogWrite.o
+                0x00000146                analogWrite
+ .text.init_drinks
+                0x0000015a      0x44e main.o
+                0x0000015a                init_drinks
+ .text.main     0x000005a8      0x274 main.o
+                0x000005a8                main
+ .text.__vector_7
+                0x0000081c       0x66 OrderReader.o
+                0x0000081c                __vector_7
+ .text.init_orderer
+                0x00000882       0x22 OrderReader.o
+                0x00000882                init_orderer
+ .text.get_orderer_data
+                0x000008a4       0x22 OrderReader.o
+                0x000008a4                get_orderer_data
  .text.__vector_16
-                0x0000019e       0x8a Stepper.o
-                0x0000019e                __vector_16
+                0x000008c6      0x178 Stepper.o
+                0x000008c6                __vector_16
  .text.__vector_5
-                0x00000228       0x36 Stepper.o
-                0x00000228                __vector_5
- .text.set_speed_glass
-                0x0000025e       0x20 Stepper.o
-                0x0000025e                set_speed_glass
+                0x00000a3e       0x20 Stepper.o
+                0x00000a3e                __vector_5
+ .text.__vector_6
+                0x00000a5e       0x2a Stepper.o
+                0x00000a5e                __vector_6
+ .text.setup_steppers
+                0x00000a88       0x44 Stepper.o
+                0x00000a88                setup_steppers
  .text.setup_stepper_glass
-                0x0000027e       0x46 Stepper.o
-                0x0000027e                setup_stepper_glass
+                0x00000acc       0x12 Stepper.o
+                0x00000acc                setup_stepper_glass
+ .text.setup_stepper_disp
+                0x00000ade       0x12 Stepper.o
+                0x00000ade                setup_stepper_disp
  .text.set_position_glass
-                0x000002c4        0xa Stepper.o
-                0x000002c4                set_position_glass
+                0x00000af0        0xa Stepper.o
+                0x00000af0                set_position_glass
  .text.is_moving_glass
-                0x000002ce       0x1c Stepper.o
-                0x000002ce                is_moving_glass
- .text.get_position_glass
-                0x000002ea        0xa Stepper.o
-                0x000002ea                get_position_glass
+                0x00000afa       0x1c Stepper.o
+                0x00000afa                is_moving_glass
  .text.stepper_move_glass
-                0x000002f4        0xa Stepper.o
-                0x000002f4                stepper_move_glass
- .text.libgcc.div
-                0x000002fe       0x28 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x000002fe                _div
-                0x000002fe                __divmodhi4
- .text.libgcc.div
-                0x00000326       0x28 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000326                __udivmodhi4
-                0x0000034e                . = ALIGN (0x2)
+                0x00000b16        0xa Stepper.o
+                0x00000b16                stepper_move_glass
+ .text.set_position_disp
+                0x00000b20        0xa Stepper.o
+                0x00000b20                set_position_disp
+ .text.is_moving_disp
+                0x00000b2a       0x1c Stepper.o
+                0x00000b2a                is_moving_disp
+ .text.get_position_disp
+                0x00000b46        0xa Stepper.o
+                0x00000b46                get_position_disp
+ .text.stepper_move_disp
+                0x00000b50        0xa Stepper.o
+                0x00000b50                stepper_move_disp
+                0x00000b5a                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000034e        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000034e                _exit
-                0x0000034e                exit
+ .fini9         0x00000b5a        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000b5a                _exit
+                0x00000b5a                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -392,51 +390,79 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000034e        0x4 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000b5a        0x4 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000352                _etext = .
+                0x00000b5e                _etext = .
 
-.data           0x00800100        0x2 load address 0x00000352
+.data           0x00800100       0x26 load address 0x00000b5e
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.steps_per_second_glass
-                0x00800100        0x2 Stepper.o
-                0x00800100                steps_per_second_glass
+ .data.number_of_dispenses
+                0x00800100       0x16 main.o
+                0x00800100                number_of_dispenses
+ .data.positions
+                0x00800116        0xc main.o
+                0x00800116                positions
+ .data.ticks_for_step_disp
+                0x00800122        0x2 Stepper.o
+                0x00800122                ticks_for_step_disp
+ .data.ticks_for_step_glass
+                0x00800124        0x2 Stepper.o
+                0x00800124                ticks_for_step_glass
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x00800102                . = ALIGN (0x2)
-                0x00800102                _edata = .
-                0x00800102                PROVIDE (__data_end, .)
+                0x00800126                . = ALIGN (0x2)
+                0x00800126                _edata = .
+                0x00800126                PROVIDE (__data_end, .)
 
-.bss            0x00800102        0x9
-                0x00800102                PROVIDE (__bss_start, .)
+.bss            0x00800126      0x647
+                0x00800126                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.data      0x00800126        0x2 OrderReader.o
+                0x00800126                data
+ .bss.is_data   0x00800128        0x2 OrderReader.o
+                0x00800128                is_data
+ .bss.target_position_disp
+                0x0080012a        0x2 Stepper.o
+                0x0080012a                target_position_disp
+ .bss.current_position_disp
+                0x0080012c        0x2 Stepper.o
+                0x0080012c                current_position_disp
  .bss.target_position_glass
-                0x00800102        0x2 Stepper.o
-                0x00800102                target_position_glass
+                0x0080012e        0x2 Stepper.o
+                0x0080012e                target_position_glass
  .bss.current_position_glass
-                0x00800104        0x2 Stepper.o
-                0x00800104                current_position_glass
+                0x00800130        0x2 Stepper.o
+                0x00800130                current_position_glass
+ .bss.ticks_disp
+                0x00800132        0x2 Stepper.o
+                0x00800132                ticks_disp
+ .bss.ticks_glass
+                0x00800134        0x2 Stepper.o
+                0x00800134                ticks_glass
  *(COMMON)
- COMMON         0x00800106        0x5 AnalogWrite.o
-                0x00800106                pinR_pwm
-                0x00800107                pinB_pwm
-                0x00800108                pinG_pwm
-                0x00800109                count
-                0x0080010a                pinMotor_pwm
-                0x0080010b                PROVIDE (__bss_end, .)
-                0x00000352                __data_load_start = LOADADDR (.data)
-                0x00000354                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800136        0x5 AnalogWrite.o
+                0x00800136                pinR_pwm
+                0x00800137                pinB_pwm
+                0x00800138                pinG_pwm
+                0x00800139                count
+                0x0080013a                pinMotor_pwm
+ COMMON         0x0080013b      0x632 main.o
+                0x0080013b                current_receipe
+                0x0080013d                drinks
+                0x0080076d                PROVIDE (__bss_end, .)
+                0x00000b5e                __data_load_start = LOADADDR (.data)
+                0x00000b84                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080010b        0x0
+.noinit         0x0080076d        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080010b                _end = .
+                0x0080076d                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -481,6 +507,7 @@ END GROUP
  .comment       0x00000000       0x30 AnalogWrite.o
                                  0x31 (size before relaxing)
  .comment       0x00000030       0x31 main.o
+ .comment       0x00000030       0x31 OrderReader.o
  .comment       0x00000030       0x31 Stepper.o
 
 .note.gnu.avr.deviceinfo
@@ -503,60 +530,69 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xb0
+.debug_aranges  0x00000000      0x128
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x30 AnalogWrite.o
  .debug_aranges
-                0x00000030       0x28 main.o
+                0x00000030       0x30 main.o
  .debug_aranges
-                0x00000058       0x58 Stepper.o
+                0x00000060       0x30 OrderReader.o
+ .debug_aranges
+                0x00000090       0x98 Stepper.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xbe2
+.debug_info     0x00000000     0x11ca
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x6cc F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_info    0x000006cc      0x139 AnalogWrite.o
- .debug_info    0x00000805      0x20e main.o
- .debug_info    0x00000a13      0x1cf Stepper.o
+ .debug_info    0x00000805      0x584 main.o
+ .debug_info    0x00000d89       0xda OrderReader.o
+ .debug_info    0x00000e63      0x367 Stepper.o
 
-.debug_abbrev   0x00000000      0x8e4
+.debug_abbrev   0x00000000      0xab1
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x66e F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_abbrev  0x0000066e       0xa8 AnalogWrite.o
- .debug_abbrev  0x00000716      0x10a main.o
- .debug_abbrev  0x00000820       0xc4 Stepper.o
+ .debug_abbrev  0x00000716      0x1e2 main.o
+ .debug_abbrev  0x000008f8       0x97 OrderReader.o
+ .debug_abbrev  0x0000098f      0x122 Stepper.o
 
-.debug_line     0x00000000      0x58e
+.debug_line     0x00000000      0xc14
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x151 F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .debug_line    0x00000151      0x126 AnalogWrite.o
- .debug_line    0x00000277      0x140 main.o
- .debug_line    0x000003b7      0x1d7 Stepper.o
+ .debug_line    0x00000151      0x120 AnalogWrite.o
+ .debug_line    0x00000271      0x586 main.o
+ .debug_line    0x000007f7       0xfc OrderReader.o
+ .debug_line    0x000008f3      0x321 Stepper.o
 
-.debug_frame    0x00000000      0x150
+.debug_frame    0x00000000      0x2a0
  *(.debug_frame)
  .debug_frame   0x00000000       0x58 AnalogWrite.o
- .debug_frame   0x00000058       0x34 main.o
- .debug_frame   0x0000008c       0xc4 Stepper.o
+ .debug_frame   0x00000058       0x8c main.o
+ .debug_frame   0x000000e4       0x6c OrderReader.o
+ .debug_frame   0x00000150      0x150 Stepper.o
 
-.debug_str      0x00000000      0x578
+.debug_str      0x00000000      0x769
  *(.debug_str)
  .debug_str     0x00000000      0x255 F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
- .debug_str     0x00000255      0x1ae AnalogWrite.o
-                                0x1e2 (size before relaxing)
- .debug_str     0x00000403       0xde main.o
-                                0x26b (size before relaxing)
- .debug_str     0x000004e1       0x97 Stepper.o
-                                0x26e (size before relaxing)
+ .debug_str     0x00000255      0x1ac AnalogWrite.o
+                                0x1e0 (size before relaxing)
+ .debug_str     0x00000401      0x24c main.o
+                                0x414 (size before relaxing)
+ .debug_str     0x0000064d       0x26 OrderReader.o
+                                0x1c1 (size before relaxing)
+ .debug_str     0x00000673       0xf6 Stepper.o
+                                0x337 (size before relaxing)
 
-.debug_loc      0x00000000      0x229
+.debug_loc      0x00000000      0x6da
  *(.debug_loc)
  .debug_loc     0x00000000       0xbb AnalogWrite.o
- .debug_loc     0x000000bb       0x88 main.o
- .debug_loc     0x00000143       0xe6 Stepper.o
+ .debug_loc     0x000000bb      0x446 main.o
+ .debug_loc     0x00000501       0x7d OrderReader.o
+ .debug_loc     0x0000057e      0x15c Stepper.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -576,11 +612,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x80
+.debug_ranges   0x00000000       0xe8
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x20 AnalogWrite.o
- .debug_ranges  0x00000020       0x18 main.o
- .debug_ranges  0x00000038       0x48 Stepper.o
+ .debug_ranges  0x00000020       0x20 main.o
+ .debug_ranges  0x00000040       0x20 OrderReader.o
+ .debug_ranges  0x00000060       0x88 Stepper.o
 
 .debug_macro
  *(.debug_macro)
