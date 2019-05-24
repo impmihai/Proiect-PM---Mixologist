@@ -119,7 +119,7 @@ void init_drinks() {
 	drinks[3][4].type = COMMAND_MOVE;
 	
 	// ROM AND DOUBLE COLA
-	drinks[4][0].amount = DRINK_JAGGER;
+	drinks[4][0].amount = DRINK_ROM;
 	drinks[4][0].type = COMMAND_MOVE;
 	
 	drinks[4][1].amount = 11000;
@@ -180,8 +180,8 @@ void init_drinks() {
 	drinks[6][6].type = COMMAND_MOVE;
 	
 	
-	// MONA + TONIC
-	drinks[7][0].amount = DRINK_MONA;
+	// Gin + TONIC
+	drinks[7][0].amount = DRINK_GIN;
 	drinks[7][0].type = COMMAND_MOVE;
 	
 	drinks[7][1].amount = 11000;
@@ -197,8 +197,8 @@ void init_drinks() {
 	drinks[7][4].type = COMMAND_MOVE;
 	
 	
-	// MONA AND DOUBLE TONIC
-	drinks[8][0].amount = DRINK_MONA;
+	// GIN AND DOUBLE TONIC
+	drinks[8][0].amount = DRINK_GIN;
 	drinks[8][0].type = COMMAND_MOVE;
 	
 	drinks[8][1].amount = 11000;

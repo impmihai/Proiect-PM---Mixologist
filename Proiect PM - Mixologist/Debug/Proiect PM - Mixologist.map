@@ -218,7 +218,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xc02
+.text           0x00000000      0xc12
  *(.vectors)
  .vectors       0x00000000       0x7c F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
                 0x00000000                __vector_default
@@ -315,63 +315,63 @@ END GROUP
                 0x00000146       0x14 AnalogWrite.o
                 0x00000146                analogWrite
  .text.init_drinks
-                0x0000015a      0x4cc main.o
+                0x0000015a      0x4dc main.o
                 0x0000015a                init_drinks
- .text.main     0x00000626      0x2a4 main.o
-                0x00000626                main
+ .text.main     0x00000636      0x2a4 main.o
+                0x00000636                main
  .text.__vector_7
-                0x000008ca       0x66 OrderReader.o
-                0x000008ca                __vector_7
+                0x000008da       0x66 OrderReader.o
+                0x000008da                __vector_7
  .text.init_orderer
-                0x00000930       0x22 OrderReader.o
-                0x00000930                init_orderer
+                0x00000940       0x22 OrderReader.o
+                0x00000940                init_orderer
  .text.get_orderer_data
-                0x00000952       0x22 OrderReader.o
-                0x00000952                get_orderer_data
+                0x00000962       0x22 OrderReader.o
+                0x00000962                get_orderer_data
  .text.__vector_16
-                0x00000974      0x178 Stepper.o
-                0x00000974                __vector_16
+                0x00000984      0x178 Stepper.o
+                0x00000984                __vector_16
  .text.__vector_5
-                0x00000aec       0x20 Stepper.o
-                0x00000aec                __vector_5
+                0x00000afc       0x20 Stepper.o
+                0x00000afc                __vector_5
  .text.__vector_6
-                0x00000b0c       0x20 Stepper.o
-                0x00000b0c                __vector_6
+                0x00000b1c       0x20 Stepper.o
+                0x00000b1c                __vector_6
  .text.setup_steppers
-                0x00000b2c       0x44 Stepper.o
-                0x00000b2c                setup_steppers
+                0x00000b3c       0x44 Stepper.o
+                0x00000b3c                setup_steppers
  .text.setup_stepper_glass
-                0x00000b70       0x12 Stepper.o
-                0x00000b70                setup_stepper_glass
+                0x00000b80       0x12 Stepper.o
+                0x00000b80                setup_stepper_glass
  .text.setup_stepper_disp
-                0x00000b82       0x12 Stepper.o
-                0x00000b82                setup_stepper_disp
+                0x00000b92       0x12 Stepper.o
+                0x00000b92                setup_stepper_disp
  .text.set_position_glass
-                0x00000b94        0xa Stepper.o
-                0x00000b94                set_position_glass
+                0x00000ba4        0xa Stepper.o
+                0x00000ba4                set_position_glass
  .text.is_moving_glass
-                0x00000b9e       0x1c Stepper.o
-                0x00000b9e                is_moving_glass
+                0x00000bae       0x1c Stepper.o
+                0x00000bae                is_moving_glass
  .text.stepper_move_glass
-                0x00000bba        0xa Stepper.o
-                0x00000bba                stepper_move_glass
+                0x00000bca        0xa Stepper.o
+                0x00000bca                stepper_move_glass
  .text.set_position_disp
-                0x00000bc4        0xa Stepper.o
-                0x00000bc4                set_position_disp
+                0x00000bd4        0xa Stepper.o
+                0x00000bd4                set_position_disp
  .text.is_moving_disp
-                0x00000bce       0x1c Stepper.o
-                0x00000bce                is_moving_disp
+                0x00000bde       0x1c Stepper.o
+                0x00000bde                is_moving_disp
  .text.get_position_disp
-                0x00000bea        0xa Stepper.o
-                0x00000bea                get_position_disp
+                0x00000bfa        0xa Stepper.o
+                0x00000bfa                get_position_disp
  .text.stepper_move_disp
-                0x00000bf4        0xa Stepper.o
-                0x00000bf4                stepper_move_disp
-                0x00000bfe                . = ALIGN (0x2)
+                0x00000c04        0xa Stepper.o
+                0x00000c04                stepper_move_disp
+                0x00000c0e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000bfe        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000bfe                _exit
-                0x00000bfe                exit
+ .fini9         0x00000c0e        0x0 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000c0e                _exit
+                0x00000c0e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -390,11 +390,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000bfe        0x4 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000c0e        0x4 f:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000c02                _etext = .
+                0x00000c12                _etext = .
 
-.data           0x00800100       0x26 load address 0x00000c02
+.data           0x00800100       0x26 load address 0x00000c12
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -455,8 +455,8 @@ END GROUP
                 0x0080013b                current_receipe
                 0x0080013d                drinks
                 0x0080076d                PROVIDE (__bss_end, .)
-                0x00000c02                __data_load_start = LOADADDR (.data)
-                0x00000c28                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000c12                __data_load_start = LOADADDR (.data)
+                0x00000c38                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080076d        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -560,13 +560,13 @@ END GROUP
  .debug_abbrev  0x000008f8       0x97 OrderReader.o
  .debug_abbrev  0x0000098f      0x122 Stepper.o
 
-.debug_line     0x00000000      0xc74
+.debug_line     0x00000000      0xc68
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x151 F:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega324pa/avr5/crtatmega324pa.o
  .debug_line    0x00000151      0x120 AnalogWrite.o
- .debug_line    0x00000271      0x5ec main.o
- .debug_line    0x0000085d       0xfc OrderReader.o
- .debug_line    0x00000959      0x31b Stepper.o
+ .debug_line    0x00000271      0x5e0 main.o
+ .debug_line    0x00000851       0xfc OrderReader.o
+ .debug_line    0x0000094d      0x31b Stepper.o
 
 .debug_frame    0x00000000      0x29c
  *(.debug_frame)
